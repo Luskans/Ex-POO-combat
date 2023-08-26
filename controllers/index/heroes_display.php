@@ -26,12 +26,14 @@ foreach ($heroesArray as $hero) {
     <div class="management__card">
         <div class="management__card--image"><img src="<?= $hero->getImage() ?>"></div>
         <p class="management__card--name"><span><?= $hero->getName() ?></span> lvl <?= $hero->getLevel() ?></p>
-        <div class="progress" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-            <?php $percent = $hero->getHealth() * $hero->getStats()['maxHealth'] / 100; ?>
-            <div class="progress-bar bg-danger" style="width: <?= $percent ?>%"></div>
+        <div class="progress mb-1" role="progressbar" stylea="width: 80%; height: 10px" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+            <?php $health_percent = $hero->getHealth() / $hero->getStats()['maxHealth'] * 100; ?>
+            <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" stylea="width: <?= $health_percent ?>%"><?= $hero->getHealth() ?></div>
         </div>
-        <p>health: <?= $hero->getHealth() ?> / <?= $hero->getStats()['maxHealth'] ?></p>
-        <p>energy: <?= $hero->getEnergy() ?> / <?= $hero->getStats()['maxEnergy'] ?></p>
+        <div class="progress mb-3" role="progressbar" stylea="width: 80%; height: 10px" aria-valuenow="10" aria-valuemin="0" aria-valuemax="10">
+            <?php $energy_percent = $hero->getEnergy() / $hero->getStats()['maxEnergy'] * 100; ?>
+            <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" stylea="width: <?= $energy_percent ?>%"><?= $hero->getEnergy() ?></div>
+        </div>
         <div class="management__card--buttons">
             <form action="./controllers/index/versus_selection.php" method="get">
                 <input type="hidden" name="add_heroId" value="<?= $hero->getId() ?>"> 

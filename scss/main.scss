@@ -1,13 +1,14 @@
 $grey: #cccccc;
-$primaryColor: rgb(255, 170, 170);
+$primaryColor: rgb(208, 255, 170);
 
 
 body {
     padding: 0;
     margin: 0;
-    background: url('../images/sky3.jpg');
-    background-size: cover;
-    background-position: center;
+    // background: url('../images/sky3.jpg');
+    background-color: green;
+    // background-size: cover;
+    // background-position: center;
 }
 
 header {
@@ -25,11 +26,14 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: white;
+        background-color: red;
+        // background: url('../images/bg1.png');
         border-radius: 10px;
-        box-shadow: 5px -2px 30px rgb(235, 235, 235);
+        // box-shadow: 5px -2px 30px rgb(235, 235, 235);
         padding: 20px;
-        width: 220px;
+        width: 200px;
+        height: 300px;
+        gap: 10px;
 
         &--new {
             display: flex;

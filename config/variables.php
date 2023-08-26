@@ -17,7 +17,7 @@ $descriptionsArray = array(
 $warriorStats = array(
     array(
         'maxHealth' => 100,
-        'maxEnergy' => 100,
+        'maxEnergy' => 10,
         'attack' => 9,
         'defense' => 4,
         'evasion' => 2,
@@ -27,7 +27,7 @@ $warriorStats = array(
     ),
     array(
         'maxHealth' => 120,
-        'maxEnergy' => 100,
+        'maxEnergy' => 10,
         'attack' => 11,
         'defense' => 5,
         'evasion' => 3,
@@ -37,7 +37,7 @@ $warriorStats = array(
     ),
     array(
         'maxHealth' => 130,
-        'maxEnergy' => 100,
+        'maxEnergy' => 10,
         'attack' => 13,
         'defense' => 6,
         'evasion' => 3,
@@ -50,7 +50,7 @@ $warriorStats = array(
 $archerStats = array(
     array(
         'maxHealth' => 100,
-        'maxEnergy' => 100,
+        'maxEnergy' => 10,
         'attack' => 9,
         'defense' => 4,
         'evasion' => 2,
@@ -60,7 +60,7 @@ $archerStats = array(
     ),
     array(
         'maxHealth' => 120,
-        'maxEnergy' => 100,
+        'maxEnergy' => 10,
         'attack' => 11,
         'defense' => 5,
         'evasion' => 3,
@@ -70,7 +70,7 @@ $archerStats = array(
     ),
     array(
         'maxHealth' => 130,
-        'maxEnergy' => 100,
+        'maxEnergy' => 10,
         'attack' => 13,
         'defense' => 6,
         'evasion' => 3,
@@ -83,7 +83,7 @@ $archerStats = array(
 $wizardStats = array(
     array(
         'maxHealth' => 100,
-        'maxEnergy' => 100,
+        'maxEnergy' => 10,
         'attack' => 9,
         'defense' => 4,
         'evasion' => 2,
@@ -93,7 +93,7 @@ $wizardStats = array(
     ),
     array(
         'maxHealth' => 120,
-        'maxEnergy' => 100,
+        'maxEnergy' => 10,
         'attack' => 11,
         'defense' => 5,
         'evasion' => 3,
@@ -103,7 +103,7 @@ $wizardStats = array(
     ),
     array(
         'maxHealth' => 130,
-        'maxEnergy' => 100,
+        'maxEnergy' => 10,
         'attack' => 13,
         'defense' => 6,
         'evasion' => 3,
@@ -116,7 +116,7 @@ $wizardStats = array(
 $priestStats = array(
     array(
         'maxHealth' => 100,
-        'maxEnergy' => 100,
+        'maxEnergy' => 10,
         'attack' => 9,
         'defense' => 4,
         'evasion' => 2,
@@ -126,7 +126,7 @@ $priestStats = array(
     ),
     array(
         'maxHealth' => 120,
-        'maxEnergy' => 100,
+        'maxEnergy' => 10,
         'attack' => 11,
         'defense' => 5,
         'evasion' => 3,
@@ -136,7 +136,7 @@ $priestStats = array(
     ),
     array(
         'maxHealth' => 130,
-        'maxEnergy' => 100,
+        'maxEnergy' => 10,
         'attack' => 13,
         'defense' => 6,
         'evasion' => 3,

@@ -12,7 +12,7 @@ class Hero {
     private string $image = "";
     private string $description = "";
     private int $health = 100;
-    private int $energy = 100;
+    private int $energy = 10;
     private array $stats = [];
 
     public function __construct(array $data)

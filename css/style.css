@@ -1,7 +1,7 @@
 body {
   padding: 0;
   margin: 0;
-  background: url("../images/sky3.jpg");
+  background-color: green;
   background-size: cover;
   background-position: center;
 }
@@ -21,11 +21,12 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  background-color: red;
   border-radius: 10px;
-  box-shadow: 5px -2px 30px rgb(235, 235, 235);
   padding: 20px;
-  width: 220px;
+  width: 200px;
+  height: 300px;
+  gap: 10px;
 }
 .management__card--new {
   display: flex;
@@ -39,12 +40,12 @@ header {
   text-align: center;
 }
 .management__card--new svg {
-  fill: rgb(255, 170, 170);
+  fill: rgb(208, 255, 170);
   width: 80px;
   height: 80px;
 }
 .management__card--stage {
-  color: #ff1111;
+  color: #7bff11;
   text-align: center;
 }
 .management__card--image {
@@ -71,7 +72,7 @@ header {
   gap: 20px;
 }
 .management__card--button {
-  background-color: rgb(255, 170, 170);
+  background-color: rgb(208, 255, 170);
   border-radius: 5px;
   border: none;
   color: white;
@@ -79,7 +80,7 @@ header {
 }
 
 .modal-footer button {
-  background-color: rgb(255, 170, 170);
+  background-color: rgb(208, 255, 170);
   border-radius: 5px;
   border: none;
   color: white;
@@ -112,11 +113,11 @@ header {
 .versus__side--middle {
   display: flex;
   align-items: center;
-  color: rgb(255, 170, 170);
+  color: rgb(208, 255, 170);
   font-size: 3rem;
 }
 .versus__side button {
-  background-color: rgb(255, 170, 170);
+  background-color: rgb(208, 255, 170);
   border-radius: 5px;
   border: none;
   color: white;

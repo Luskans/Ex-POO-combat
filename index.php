@@ -1,12 +1,3 @@
-<?php
-require('./config/db.php');
-require('./config/autoload.php');
-require('./config/variables.php');
-
-session_start();
-// session_destroy();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +9,17 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
+
+<?php
+require('./config/db.php');
+require('./config/autoload.php');
+require('./config/variables.php');
+
+session_start();
+// $_SESSION['attacker'] = "";
+// $_SESSION['defender'] = "";
+// session_destroy();
+?>
 
 <body>
     <header class="text-center">
