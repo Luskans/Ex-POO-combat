@@ -1,20 +1,24 @@
 .management {
     width: 100%;
-    background-color: $secondaryColor;
+    // background-color: $secondaryColor;
+    background-color: lighten($tertiaryColor, 15);
+    // background-color: rgb(97, 126, 243);
+    padding: 30px 0 30px 0;
 
     &__card {
         display: flex;
         flex-direction: column;
         align-items: center;
         // background: url('../images/bg3.png');
-        // background: url('../images/card1.png');
+        background: url('../images/card4.png');
         border-radius: 10px;
         // box-shadow: 5px -2px 30px rgb(235, 235, 235);
         // box-shadow: 2px -2px 5px rgb(169, 169, 169);
-        border: 1px solid rgb(169, 169, 169, 0.3);
+        border: 1px solid rgb(169, 169, 169, 0.2);
         padding: 20px;
-        width: 200px;
-        // height: 300px;
+        min-width: 200px;
+        max-width: 200px;
+        height: 320px;
         gap: 10px;
         position: relative;
 
@@ -31,9 +35,13 @@
             }
 
             & svg {
-                fill: $primaryColor;
-                width: 80px;
-                height: 80px;
+                fill: darken($primaryColor, 5);
+                width: 70px;
+                height: 70px;
+
+                &:hover {
+                    fill: darken($primaryColor, 15);
+                }
             }
         }
 
@@ -77,14 +85,6 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-        }
-
-        &--button {
-            background-color: $primaryColor;
-            border-radius: 5px;
-            border: none;
-            color: white;
-            font-weight: bold;
         }
 
         &--close {

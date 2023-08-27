@@ -4,7 +4,7 @@
 
 <section class="versus">
 
-    <div class="container d-flex">
+    <div class="container-sm d-flex flex-column align-items-center flex-md-row gap-3 pt-4">
 
         <div class="versus__side versus__side--left">
 
@@ -16,38 +16,42 @@
         ?>
 
             <div class="caard">
-                <div class="caard__stats">
+                <div class="caard__stats d-flex flex-column justify-content-between">
                     <p class="caard__stats--class"><span><?= $attacker->getClass() ?></span> lvl <span><?= $attacker->getLevel() ?></span><p>
                     <div class="d-flex gap-4">
                         <div class="d-flex flex-column">
-                            <div class="d-flex flex-column align-items-center">
-                                <p>attack:</p>
-                                <p class="text-white"><?= $attacker->getStats()['attack'] ?></p>
+                            <div class="stamp d-flex flex-column align-items-center">
+                                <p>attack</p>
+                                <p><?= $attacker->getStats()['attack'] ?></p>
                             </div>
-                            <div class="d-flex flex-column align-items-center">
-                                <p>defense:</p>
+                            <div class="stamp d-flex flex-column align-items-center">
+                                <p>defense</p>
                                 <p><?= $attacker->getStats()['defense'] ?></p>
                             </div>
-                            <div class="d-flex flex-column align-items-center">
-                                <p>evasion:</p>
+                            <div class="stamp d-flex flex-column align-items-center">
+                                <p>evasion</p>
                                 <p><?= $attacker->getStats()['evasion'] ?></p>
                             </div>
                         </div>
-                        <div class="d-flex flex-column">
+                        <div class="stamp d-flex flex-column">
                             <div class="d-flex flex-column align-items-center">
-                                <p>critical:</p>
+                                <p>critical</p>
                                 <p><?= $attacker->getStats()['critical'] ?></p>
                             </div>
-                            <div class="d-flex flex-column align-items-center">
-                                <p>speed:</p>
+                            <div class="stamp d-flex flex-column align-items-center">
+                                <p>speed</p>
                                 <p><?= $attacker->getStats()['speed'] ?></p>
                             </div>
-                            <div class="d-flex flex-column align-items-center">
-                                <p>regen:</p>
+                            <div class="stamp d-flex flex-column align-items-center">
+                                <p>regen</p>
                                 <p><?= $attacker->getStats()['regen'] ?></p>
                             </div>
                         </div>
-                    <div>
+                    </div>
+                    <form class="align-self-center" action="./controllers/index/versus_selection.php" method="get">
+                        <input type="hidden" name="remove_attackerId" value="<?= $attacker->getId() ?>"> 
+                        <button class="customButton" type="submit"> Remove </button> 
+                    </form>
                 </div>
 
                 <div class="caard__preview">
@@ -66,10 +70,7 @@
                 </div>
             </div>
 
-            <form action="./controllers/index/versus_selection.php" method="get">
-                    <input type="hidden" name="removeAttacker_heroId" value="<?= $attacker->getId() ?>"> 
-                    <button type="submit"> Remove </button> 
-            </form>
+            
 
         <?php
         } else {
@@ -79,7 +80,24 @@
         </div>
 
         <div class="versus__side--middle">
-            <p>VS</p>
+            <?php
+            if (empty($_SESSION['attacker']) || (empty($_SESSION['defender']) || $_SESSION['attacker'] == "" || $_SESSION['attacker'] == "")) { ?>
+                <div><img src="./images/versus2.png"></div>
+            <?php } else { ?>
+                <div class="vertical-centered-box">
+                    <div class="content">
+                        <div class="loader-circle"></div>
+                        <div class="loader-line-mask">
+                            <div class="loader-line"></div>
+                        </div>
+                    </div>
+                </div>
+                <form action="./fight_selection.php" method="get">
+                    <input type="hidden" name="fight_attackerId" value="<?= $_SESSION['attacker']->getId() ?>">
+                    <input type="hidden" name="fight_defenderId" value="<?= $_SESSION['defender']->getId() ?>">  
+                    <input type="image" src="./images/versus.png" alt="Submit">  
+                </form>
+            <?php } ?>
         </div>
         
         <div class="versus__side versus__side--right">
@@ -107,39 +125,47 @@
                         <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" style="width: <?= $energy_percentD ?>%"><?= $defender->getEnergy() ?></div>
                     </div>
                 </div>
-                <div class="caard__stats">
+
+                <div class="caard__stats d-flex flex-column justify-content-between">
                     <p class="caard__stats--class"><span><?= $defender->getClass() ?></span> lvl <span><?= $defender->getLevel() ?></span><p>
-                    <div class="caard__stats--line">
-                        <p>atk :</p>
-                        <p><?= $defender->getStats()['attack'] ?></p>
+                    <div class="d-flex gap-4">
+                        <div class="d-flex flex-column">
+                            <div class="stamp d-flex flex-column align-items-center">
+                                <p>attack</p>
+                                <p><?= $defender->getStats()['attack'] ?></p>
+                            </div>
+                            <div class="stamp d-flex flex-column align-items-center">
+                                <p>defense</p>
+                                <p><?= $defender->getStats()['defense'] ?></p>
+                            </div>
+                            <div class="stamp d-flex flex-column align-items-center">
+                                <p>evasion</p>
+                                <p><?= $defender->getStats()['evasion'] ?></p>
+                            </div>
+                        </div>
+                        <div class="stamp d-flex flex-column">
+                            <div class="d-flex flex-column align-items-center">
+                                <p>critical</p>
+                                <p><?= $defender->getStats()['critical'] ?></p>
+                            </div>
+                            <div class="stamp d-flex flex-column align-items-center">
+                                <p>speed</p>
+                                <p><?= $defender->getStats()['speed'] ?></p>
+                            </div>
+                            <div class="stamp d-flex flex-column align-items-center">
+                                <p>regen</p>
+                                <p><?= $defender->getStats()['regen'] ?></p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="caard__stats--line">
-                        <p>def :</p>
-                        <p><?= $defender->getStats()['defense'] ?></p>
-                    </div>
-                    <div class="caard__stats--line">
-                        <p>eva :</p>
-                        <p><?= $defender->getStats()['evasion'] ?></p>
-                    </div>
-                    <div class="caard__stats--line">
-                        <p>crit :</p>
-                        <p><?= $defender->getStats()['critical'] ?></p>
-                    </div>
-                    <div class="caard__stats--line">
-                        <p>spd :</p>
-                        <p><?= $defender->getStats()['speed'] ?></p>
-                    </div>
-                    <div class="caard__stats--line">
-                        <p>rgn :</p>
-                        <p><?= $defender->getStats()['regen'] ?></p>
-                    </div>
-                    
+                    <form class="align-self-center" action="./controllers/index/versus_selection.php" method="get">
+                        <input type="hidden" name="remove_defenderId" value="<?= $defender->getId() ?>"> 
+                        <button class="customButton" type="submit"> Remove </button> 
+                    </form>
                 </div>
             </div>
-            <form action="./controllers/index/versus_selection.php" method="get">
-                    <input type="hidden" name="removeDefender_heroId" value="<?= $defender->getId() ?>"> 
-                    <button type="submit"> Remove </button> 
-            </form>
+
+            
 
         <?php
         } else {

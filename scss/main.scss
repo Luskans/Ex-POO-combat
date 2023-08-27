@@ -1,14 +1,38 @@
 $grey: #cccccc;
 $primaryColor: rgb(255, 170, 170);
-$secondaryColor: rgb(200, 241, 252);
+$secondaryColor: rgb(231, 242, 245);
+$textColor: rgb(152, 152, 152);
+$tertiaryColor: #23a2c5;
+
+@mixin customButton {
+    background-color: darken($primaryColor, 5);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    width: 62px;
+    height: 25px;
+
+    &:hover {
+        background-color: darken($primaryColor, 15);
+    }
+}
 
 @import 'particles';
 @import 'management';
 @import 'versus';
+@import 'modals';
 
 body {
     padding: 0;
     margin: 0;
+    & p, h2 {
+        color: darken($textColor, 20);
+    }
+    & .customButton {
+        @include customButton;
+    }
 }
 
 header {
@@ -17,6 +41,18 @@ header {
     background-size: cover;
     background-position: center;
     position: relative;
+    
+    @media screen and (max-width: 720px) {
+        height: 200px;
+
+        & img:nth-child(1) {
+            max-width: 300px;
+        }
+
+        & img:nth-child(2) {
+            max-width: 150px;
+        }
+    }
 }
 
 .modal-footer {
@@ -31,5 +67,9 @@ header {
 }
 
 footer {
-    height: 100px;
+    height: 60px;
+
+    p {
+        margin-bottom: -2px;
+    }
 }

@@ -20,9 +20,13 @@ if (!isset($_SESSION['attacker']) && !isset($_SESSION['defender'])) {
     $_SESSION['attacker'] = "";
     $_SESSION['defender'] = "";
 }
-// $_SESSION['attacker'] = "";
-// $_SESSION['defender'] = "";
 // session_destroy();
+
+
+// echo '<script>';
+// echo 'location.reload(true);'; // Recharge la page en ignorant le cache
+// echo 'localStorage.clear();';   // Vide le localStorage
+// echo '</script>';
 ?>
 
 <body>
@@ -45,8 +49,8 @@ if (!isset($_SESSION['attacker']) && !isset($_SESSION['defender'])) {
         <?php include_once('./controllers/index/modals_display.php') ?>
     </main>
     
-    <footer>
-        
+    <footer class="d-flex justify-content-center align-items-center">
+        <p>Copyright &copy; 2023 - Sylvain</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 

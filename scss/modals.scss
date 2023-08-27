@@ -1,0 +1,46 @@
+#deleteModal {
+    & button:nth-child(1) {
+        background-color: $textColor;
+
+        &:hover {
+            background-color: darken($textColor, 10);
+        }
+    }
+
+    & p {
+        font-size: 1.4rem;
+    }
+}
+
+#creationModal {
+    & .modal-header {
+        background-color: lighten($tertiaryColor, 15);
+
+        & h2 {
+            color: white;
+            font-weight: bold;
+            font-size: 2.4rem; 
+        }
+    }
+
+    & form {
+        & > label, & p {
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: $tertiaryColor;
+            color: white;
+            font-weight: bold;
+            font-size: 1.6rem;
+        }
+
+        & p {
+            margin-top: 20px;
+            margin-bottom: -10px;
+        }
+    }
+
+    & .modal-image {
+        & label {
+            width: 230px;
+        }
+    }
+}

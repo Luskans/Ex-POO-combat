@@ -190,6 +190,21 @@ class Hero {
             $this->setDescription($descriptionsArray['priest']);
             $this->setStats($priestStats[$this->getLevel() - 1]);
         }
+        if ($this->getClass() === "Monk") {
+            $this->setImage($imagesArray['monk']);
+            $this->setDescription($descriptionsArray['monk']);
+            $this->setStats($priestStats[$this->getLevel() - 1]);
+        }
+        if ($this->getClass() === "Paladin") {
+            $this->setImage($imagesArray['paladin']);
+            $this->setDescription($descriptionsArray['paladin']);
+            $this->setStats($priestStats[$this->getLevel() - 1]);
+        }
+        if ($this->getClass() === "Duellist") {
+            $this->setImage($imagesArray['duellist']);
+            $this->setDescription($descriptionsArray['duellist']);
+            $this->setStats($priestStats[$this->getLevel() - 1]);
+        }
     }
 
     // GIVE EXP, LEVEL AND INITIALIZE A HERO

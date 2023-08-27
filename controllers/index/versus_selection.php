@@ -33,10 +33,10 @@ if (!empty($_GET['add_heroId']) && empty($_SESSION['attacker']) && empty($_SESSI
 
 ////////// REMOVE HERO FROM VERSUS PANEL
 
-if (!empty($_GET['removeAttacker_heroId'])) {
+if (!empty($_GET['remove_attackerId'])) {
     $_SESSION['attacker'] = "";
 
-} elseif (!empty($_GET['removeDefender_heroId'])) {
+} elseif (!empty($_GET['remove_defenderId'])) {
     $_SESSION['defender'] = ""; 
 }
 

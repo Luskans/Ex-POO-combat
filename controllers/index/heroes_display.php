@@ -4,11 +4,11 @@
 
 <section class="management">
 
-    <div class="container d-flex justify-content-center gap-4">
+    <div class="container d-flex justify-content-center flex-wrap gap-4">
 
         <div class="management__card management__card--new">
             <p>Create a new character</p>
-            <a data-bs-toggle="modal" data-bs-target="#creationModal">
+            <a type="button" data-bs-toggle="modal" data-bs-target="#creationModal">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
                     <path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 
                     64-64V96c0-35.3-28.7-64-64-64H64zM200 344V280H136c-13.3 0-24-10.7-24-24s10.7-24 
@@ -41,7 +41,7 @@
             <div class="management__card--buttons">
                 <form action="./controllers/index/versus_selection.php" method="get">
                     <input type="hidden" name="add_heroId" value="<?= $hero->getId() ?>"> 
-                    <button class="management__card--button" type="submit"> Choose </button> 
+                    <button class="customButton" type="submit"> Choose </button> 
                 </form>
           
                 <button class="management__card--close btn-close" data-bs-toggle="modal" data-bs-target="#deleteModal"></button> 
