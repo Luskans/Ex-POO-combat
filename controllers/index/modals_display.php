@@ -2,7 +2,7 @@
 <!-- HERO CREATION MODAL -->
 <!------------------------->
 
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="creationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
@@ -30,6 +30,27 @@
             </div>
             <div class="modal-footer d-flex justify-content-center">
                 <button type="submit" form="hero_creation">Create</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!------------------------------------>
+<!-- HERO CONFIRMATION DELETE MODAL -->
+<!------------------------------------>
+
+<div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <p>Do you really want to delete this character ?
+                <div class="d-flex justify-content-center gap-5">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <form action="./controllers/index/hero_delete.php" method="get">
+                        <input type="hidden" name="heroId" value="<?= $hero->getId() ?>"> 
+                        <button class="management__card--button" type="submit">Confirm</button>    
+                    </form>
+                </div>
             </div>
         </div>
     </div>

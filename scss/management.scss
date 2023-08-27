@@ -1,0 +1,95 @@
+.management {
+    width: 100%;
+    background-color: $secondaryColor;
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: url('../images/bg3.png');
+        border-radius: 10px;
+        // box-shadow: 5px -2px 30px rgb(235, 235, 235);
+        // box-shadow: 2px -2px 5px rgb(169, 169, 169);
+        border: 1px solid rgb(169, 169, 169, 0.3);
+        padding: 20px;
+        width: 200px;
+        // height: 300px;
+        gap: 10px;
+        position: relative;
+
+        &--new {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+
+            & p {
+                font-weight: bold;
+                text-align: center;
+            }
+
+            & svg {
+                fill: $primaryColor;
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        &--image {
+            margin-top: -30px;
+            margin-bottom: -5px;
+        }
+
+        &--name {
+            font-style: italic;
+            margin-bottom: 0px;
+
+            & span {
+                font-weight: bold;
+                font-style: normal;
+            }
+        }
+
+        &--class {
+            font-style: italic;
+        }
+
+        &--health {
+            margin-bottom: -5px;
+            width: 140px;
+            max-height: 10px;
+        }
+
+        &--energy {
+            margin-bottom: 4px;
+            width: 140px;
+            max-height: 10px;
+        }
+
+        & form {
+            display: flex;
+            justify-content: center;
+        }
+
+        &--buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        &--button {
+            background-color: $primaryColor;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        &--close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+    }
+}

@@ -22,19 +22,25 @@ session_start();
 ?>
 
 <body>
-    <header class="text-center">
-        <h1>Heroes fight</h1>
+    <header class="d-flex flex-column justify-content-center align-items-center">
+        <img src="./images/title1.png">
+        <img src="./images/title2.png">
+
+        <div class="animation-wrapper">
+            <div class="particle particle-1"></div>
+            <div class="particle particle-2"></div>
+            <div class="particle particle-3"></div>
+            <div class="particle particle-4"></div>
+        </div>
     </header>
     
-    <div class="container d-flex flex-column align-items-center gap-5">
-
+    <main class="d-flex flex-column align-items-center gap-5">
         <?php $heroRepository = new HeroRepository($db); ?>
         <?php include_once('./controllers/index/versus_display.php') ?>
         <?php include_once('./controllers/index/heroes_display.php') ?>
-        <?php include_once('./controllers/index/modal_display.php') ?>
-        
-    </div>
-
+        <?php include_once('./controllers/index/modals_display.php') ?>
+    </main>
+    
     <footer>
         
     </footer>
