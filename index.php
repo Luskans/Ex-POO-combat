@@ -16,6 +16,10 @@ require('./config/autoload.php');
 require('./config/variables.php');
 
 session_start();
+if (!isset($_SESSION['attacker']) && !isset($_SESSION['defender'])) {
+    $_SESSION['attacker'] = "";
+    $_SESSION['defender'] = "";
+}
 // $_SESSION['attacker'] = "";
 // $_SESSION['defender'] = "";
 // session_destroy();
