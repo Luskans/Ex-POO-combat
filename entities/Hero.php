@@ -11,8 +11,8 @@ class Hero {
     private int $expGiven = 0;
     private string $image = "";
     private string $description = "";
-    private int $health = 100;
-    private int $energy = 10;
+    private int $health;
+    private int $energy;
     private array $stats = [];
 
     public function __construct(array $data)
@@ -154,10 +154,10 @@ class Hero {
             $this->setExp($data["exp"]);
         }
         if (isset($data["health"])) {
-            $this->setExp($data["health"]);
+            $this->setHealth($data["health"]);
         }
         if (isset($data["energy"])) {
-            $this->setExp($data["energy"]);
+            $this->setEnergy($data["energy"]);
         }
     }
     
@@ -218,9 +218,5 @@ class Hero {
             $this->setLevel($this->getLevel() + 1);
             $this->initialize();
         }
-    }
-
-    // VARIABLES
-
-    
+    }    
 }

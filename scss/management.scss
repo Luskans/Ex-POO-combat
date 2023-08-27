@@ -29,8 +29,15 @@
             justify-content: center;
             gap: 20px;
 
-            & p {
+            & p:nth-child(1) {
                 font-weight: bold;
+                text-align: center;
+            }
+
+            & p:nth-child(2), p:nth-child(3) {
+                color: darken($primaryColor, 15);
+                font-style: italic;
+                font-weight: normal;
                 text-align: center;
             }
 

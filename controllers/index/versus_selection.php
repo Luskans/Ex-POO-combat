@@ -10,19 +10,19 @@ session_start();
 if (!empty($_GET['add_heroId']) && empty($_SESSION['attacker']) && empty($_SESSION['defender'])) {
 
     $heroRepository = new HeroRepository($db);
-    $heroData = $heroRepository->findById($_GET['add_heroId']);
+    $heroData = $heroRepository->selectById($_GET['add_heroId']);
     $_SESSION['attacker'] = $heroRepository->createById($heroData);
 
 } elseif (!empty($_GET['add_heroId']) && !empty($_SESSION['attacker']) && empty($_SESSION['defender'])) {
 
     $heroRepository = new HeroRepository($db);
-    $heroData = $heroRepository->findById($_GET['add_heroId']);
+    $heroData = $heroRepository->selectById($_GET['add_heroId']);
     $_SESSION['defender'] = $heroRepository->createById($heroData);
 
 } elseif (!empty($_GET['add_heroId']) && empty($_SESSION['attacker']) && !empty($_SESSION['defender'])) {
 
     $heroRepository = new HeroRepository($db);
-    $heroData = $heroRepository->findById($_GET['add_heroId']);
+    $heroData = $heroRepository->selectById($_GET['add_heroId']);
     $_SESSION['attacker'] = $heroRepository->createById($heroData);
 
 } elseif (!empty($_GET['add_heroId']) && !empty($_SESSION['attacker']) && !empty($_SESSION['defender'])) {

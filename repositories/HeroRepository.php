@@ -28,10 +28,23 @@ class HeroRepository {
     ///// METHODS /////
     //////////////////
 
+
+    // SHOW COUNT OF ALL HEROES BY NAME
+
+    public function showCountByName(string $name):int
+    {
+        $request = $this->db->prepare('SELECT COUNT(*) FROM heroes WHERE name = :name');
+        $request->execute([
+            'name' => $name
+        ]);
+        $count = $request->fetchColumn();
+
+        return $count;
+    }
     
     // SELECT ALL HEROES EXCEPT THOSES SELECTED IN VERSUS PANEL
 
-    public function findAllByLevel():array
+    public function selectAllExceptVersus():array
     {
         if ($_SESSION['attacker'] != "" && $_SESSION['defender'] != "" ) {
 
@@ -79,9 +92,9 @@ class HeroRepository {
         return $heroesArray;
     }
 
-    // SELECT AN HERO BY HIS ID
+    // SELECT A HERO FROM DATABASE BY HIS ID
  
-    public function findById(int $id):array
+    public function selectById(int $id):array
     {
         $request = $this->db->prepare('SELECT * FROM heroes WHERE id = :id');
         $request->execute([
@@ -101,20 +114,39 @@ class HeroRepository {
         return $hero;
     }
 
-    // ADD TO DATABASE A HERO
+    // DELETE THE HERO SELECTED PREVIOUSLY
 
-    public function add(Hero $hero)
+    public function delete(array $heroData)
     {
-        $request = $this->db->prepare('INSERT INTO heroes (name, class, level, exp) VALUES (:name, :class, :level, :exp)');
+        $request = $this->db->prepare('DELETE FROM heroes WHERE id = :id');
         $request->execute([
-            'name' => $hero->getName(),
-            'class' => $hero->getClass(),
-            'level' => $hero->getLevel(),
-            'exp' => $hero->getExp()
+            'id' => $heroData['id']
         ]);
+    }
 
-        $id = $this->db->lastInsertId();
-        $hero->setId($id);
+    // UPDATE THE HERO SELECTED PREVIOUSLY
+
+    public function updateDatabase(array $heroData)
+    {
+        $request = $this->db->prepare('DELETE FROM heroes WHERE id = :id');
+        $request->execute([
+            'id' => $hero->getId()
+        ]);
+    }
+
+    // ADD TO DATABASE A NEW HERO
+
+    public function addDatabase(string $name, string $class, int $health)
+    {
+        $request = $this->db->prepare('INSERT INTO heroes (name, class, level, exp, health, energy) VALUES (:name, :class, :level, :exp, :health, :energy)');
+        $request->execute([
+            'name' => $name,
+            'class' => $class,
+            'level' => 1,
+            'exp' => 0,
+            'health' => $health,
+            'energy' => 0
+        ]);
     }
 
     // public function update(Hero $hero)

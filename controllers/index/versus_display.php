@@ -10,7 +10,7 @@
 
         <?php
         if (!empty($_SESSION['attacker'])) {
-            $heroData = $heroRepository->findById($_SESSION['attacker']->getId());
+            $heroData = $heroRepository->selectById($_SESSION['attacker']->getId());
             $attacker = $heroRepository->createById($heroData);
             $attacker->initialize();
         ?>
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                 </div>
-                <form action="./fight_selection.php" method="get">
+                <form action="./controllers/fight/fight_selection.php" method="get">
                     <input type="hidden" name="fight_attackerId" value="<?= $_SESSION['attacker']->getId() ?>">
                     <input type="hidden" name="fight_defenderId" value="<?= $_SESSION['defender']->getId() ?>">  
                     <input type="image" src="./images/versus.png" alt="Submit">  
@@ -105,7 +105,7 @@
         <?php
         if (!empty($_SESSION['defender'])) {
 
-            $heroData = $heroRepository->findById($_SESSION['defender']->getId());
+            $heroData = $heroRepository->selectById($_SESSION['defender']->getId());
             $defender = $heroRepository->createById($heroData);
             $defender->initialize();
         ?>

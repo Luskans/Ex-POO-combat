@@ -15,11 +15,18 @@
                     24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 
                     24-24 24H248v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
             </a>
+            <?php if ($_SESSION['creationError'] === 2) { ?>
+                <p>Hero not created, please complete all required fields.</p>
+            <?php } elseif ($_SESSION['creationError'] === 1) { ?>
+                <p>Hero not created, name is already used.</p>
+            <?php } elseif ($_SESSION['creationError'] === 0) {?>
+                <div></div>
+            <?php } ?>
         </div>
 
         
     <?php
-    $heroesData = $heroRepository->findAllByLevel();
+    $heroesData = $heroRepository->selectAllExceptVersus();
     $heroesArray = $heroRepository->createAll($heroesData);
     foreach ($heroesArray as $hero) {
         $hero->initialize();
@@ -44,11 +51,12 @@
                     <button class="customButton" type="submit"> Choose </button> 
                 </form>
           
-                <button class="management__card--close btn-close" data-bs-toggle="modal" data-bs-target="#deleteModal"></button> 
-                <!-- <form action="./controllers/index/hero_delete.php" method="get">
-                    <input type="hidden" name="heroId" value="<?= $hero->getId() ?>"> 
-                    <button class="management__card--close btn-close" type="submit"></button> 
-                </form> -->
+                <!-- <button class="management__card--close btn-close" data-bs-toggle="modal" data-bs-target="#deleteModal"></button> -->
+
+                <form action="./controllers/index/hero_delete.php" method="post">
+                    <input type="hidden" name="delete_heroId" value="<?= $hero->getId() ?>"> 
+                    <button class="management__card--close btn-close" type="submit"> </button> 
+                </form>
             </div>
         </div>
 
