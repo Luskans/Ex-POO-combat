@@ -42,7 +42,7 @@
             </div>
             <div class="progress management__card--energy" role="progressbar" aria-valuenow="<?= $hero->getEnergy() ?>" aria-valuemin="0" aria-valuemax="<?= $hero->getStats()['maxEnergy'] ?>">
                 <?php $energy_percent = $hero->getEnergy() / $hero->getStats()['maxEnergy'] * 100; ?>
-                <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" style="width: <?= $energy_percent ?>%"><?= $hero->getEnergy() ?></div>
+                <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" style="width: <?= $energy_percent ?>%"><?= $hero->getEnergy() ?></div>
             </div>
 
             <div class="management__card--buttons">
@@ -63,5 +63,12 @@
     <?php } ?>
 
     </div>
+
+    <!-- <div class="animation-wrapper z-0">
+        <div class="particle particle-1"></div>
+        <div class="particle particle-2"></div>
+        <div class="particle particle-3"></div>
+        <div class="particle particle-4"></div>
+    </div> -->
 
 </section>

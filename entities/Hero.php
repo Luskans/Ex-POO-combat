@@ -165,7 +165,17 @@ class Hero {
 
     public function initialize()
     {
-        require('./config/variables.php');
+        if (file_exists('./config/variables.php')) {
+            require('./config/variables.php');
+
+        } elseif (file_exists('../config/variables.php')){
+            require('../config/variables.php');
+            
+        } else {
+            require('../../config/variables.php');
+        }
+
+        // require('./config/variables.php');
 
         $this->setMaxExp(100 * $this->getLevel());
         $this->setExpGiven(($this->getLevel() * 40));
@@ -193,18 +203,56 @@ class Hero {
         if ($this->getClass() === "Monk") {
             $this->setImage($imagesArray['monk']);
             $this->setDescription($descriptionsArray['monk']);
-            $this->setStats($priestStats[$this->getLevel() - 1]);
+            $this->setStats($monkStats[$this->getLevel() - 1]);
         }
         if ($this->getClass() === "Paladin") {
             $this->setImage($imagesArray['paladin']);
             $this->setDescription($descriptionsArray['paladin']);
-            $this->setStats($priestStats[$this->getLevel() - 1]);
+            $this->setStats($paladinStats[$this->getLevel() - 1]);
         }
         if ($this->getClass() === "Duellist") {
             $this->setImage($imagesArray['duellist']);
             $this->setDescription($descriptionsArray['duellist']);
-            $this->setStats($priestStats[$this->getLevel() - 1]);
+            $this->setStats($duellistStats[$this->getLevel() - 1]);
         }
+
+
+
+        // if ($this->getClass() === "Warrior") {
+        //     $this->setImage($imagesArray['warrior']);
+        //     $this->setDescription($descriptionsArray['warrior']);
+        //     $this->setStats($warriorStats[$this->getLevel() - 1]);
+        // }
+        // if ($this->getClass() === "Archer") {
+        //     $this->setImage($imagesArray['archer']);
+        //     $this->setDescription($descriptionsArray['archer']);
+        //     $this->setStats($archerStats[$this->getLevel() - 1]);
+        // }
+        // if ($this->getClass() === "Wizard") {
+        //     $this->setImage($imagesArray['wizard']);
+        //     $this->setDescription($descriptionsArray['wizard']);
+        //     $this->setStats($wizardStats[$this->getLevel() - 1]);
+        // }
+        // if ($this->getClass() === "Priest") {
+        //     $this->setImage($imagesArray['priest']);
+        //     $this->setDescription($descriptionsArray['priest']);
+        //     $this->setStats($priestStats[$this->getLevel() - 1]);
+        // }
+        // if ($this->getClass() === "Monk") {
+        //     $this->setImage($imagesArray['monk']);
+        //     $this->setDescription($descriptionsArray['monk']);
+        //     $this->setStats($priestStats[$this->getLevel() - 1]);
+        // }
+        // if ($this->getClass() === "Paladin") {
+        //     $this->setImage($imagesArray['paladin']);
+        //     $this->setDescription($descriptionsArray['paladin']);
+        //     $this->setStats($priestStats[$this->getLevel() - 1]);
+        // }
+        // if ($this->getClass() === "Duellist") {
+        //     $this->setImage($imagesArray['duellist']);
+        //     $this->setDescription($descriptionsArray['duellist']);
+        //     $this->setStats($priestStats[$this->getLevel() - 1]);
+        // }
     }
 
     // GIVE EXP, LEVEL AND INITIALIZE A HERO

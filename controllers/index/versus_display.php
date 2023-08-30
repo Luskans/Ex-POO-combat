@@ -65,7 +65,7 @@
 
                     <div class="progress caard__preview--energy" role="progressbar" aria-valuenow="<?= $attacker->getEnergy() ?>" aria-valuemin="0" aria-valuemax="<?= $attacker->getStats()['maxEnergy'] ?>">
                         <?php $energy_percentA = $attacker->getEnergy() / $attacker->getStats()['maxEnergy'] * 100; ?>
-                        <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" style="width: <?= $energy_percentA ?>%"><?= $attacker->getEnergy() ?></div>
+                        <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" style="width: <?= $energy_percentA ?>%"><?= $attacker->getEnergy() ?></div>
                     </div>
                 </div>
             </div>
@@ -122,7 +122,7 @@
 
                     <div class="progress caard__preview--energy" role="progressbar" aria-valuenow="<?= $defender->getEnergy() ?>" aria-valuemin="0" aria-valuemax="<?= $defender->getStats()['maxEnergy'] ?>">
                         <?php $energy_percentD = $defender->getEnergy() / $defender->getStats()['maxEnergy'] * 100; ?>
-                        <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" style="width: <?= $energy_percentD ?>%"><?= $defender->getEnergy() ?></div>
+                        <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" style="width: <?= $energy_percentD ?>%"><?= $defender->getEnergy() ?></div>
                     </div>
                 </div>
 

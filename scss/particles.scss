@@ -26,6 +26,7 @@ $time-4: 600s;
     width: 100%;
     height: 100%;
     overflow: hidden;
+    z-index: 1;
 }
 
 .particle,
@@ -96,12 +97,6 @@ $time-4: 600s;
     to   { transform: translateY($spacing * -1); }
 }
 
-.page-wrapper {
-    text-align: center;
-    color: #fff;
-    z-index: 2;
-}
-
 
 ////////////////// CIRCLE
 
@@ -132,19 +127,6 @@ $time-4: 600s;
       font-size: 0;
     }
 }
-
-// .loader-circle {
-//     position: absolute;
-//     left: 50%;
-//     top: 50%;
-//     width: 120px;
-//     height: 120px;
-//     border-radius: 50%;
-//     box-shadow: inset 0 0 0 1px rgba(255,255,255,.1);
-//     margin-left: -60px;
-//     margin-top: -60px;
-//     // .animation(fade 1.2s infinite ease-in-out);
-// }
   
 .loader-line-mask {
     position: absolute;

@@ -37,6 +37,7 @@ if (!isset($_SESSION['attacker']) && !isset($_SESSION['defender']) && !isset($_S
     <?php include_once('./controllers/fight/background_display.php'); ?>
     <?php include_once('./controllers/fight/fight_display.php'); ?>
 
+    
 
 </body>
 
