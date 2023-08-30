@@ -1,10 +1,11 @@
 <?php
 
-class FightManager
-{
+class FightRepository {
 
 
-    ///// METHODS
+    ///////////////////
+    ///// METHODS /////
+    //////////////////
 
     public function createMonster(string $name, int $health_point = 100):Monster
     {

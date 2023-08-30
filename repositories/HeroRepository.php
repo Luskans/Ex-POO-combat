@@ -126,13 +126,13 @@ class HeroRepository {
 
     // UPDATE THE HERO SELECTED PREVIOUSLY
 
-    public function updateDatabase(array $heroData)
-    {
-        $request = $this->db->prepare('DELETE FROM heroes WHERE id = :id');
-        $request->execute([
-            'id' => $hero->getId()
-        ]);
-    }
+    // public function updateDatabase(array $heroData)
+    // {
+    //     $request = $this->db->prepare('DELETE FROM heroes WHERE id = :id');
+    //     $request->execute([
+    //         'id' => $hero->getId()
+    //     ]);
+    // }
 
     // ADD TO DATABASE A NEW HERO
 

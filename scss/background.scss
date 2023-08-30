@@ -1,0 +1,145 @@
+.background {
+    overflow: hidden;
+
+    & > div {
+        width: 200vw;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+
+        .bg-box {
+            width: 100vw;
+            height: 100%;
+            position: relative;
+
+            &--2 {
+                width: 100vw;
+                height: 100%;
+                position: relative;
+            }
+        }
+
+        .bg1,
+        .bg2,
+        .bg3,
+        .bg4 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            &--2 {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+
+                & img {
+                    position: absolute;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            & img {
+                position: absolute;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .bg1 {
+            z-index: -4;
+            animation-name: slide;
+            animation-direction: normal;
+            animation-fill-mode: both;
+            animation-delay: 0;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-duration: 90s;
+
+
+            &--2 {
+                z-index: -4;
+                animation-name: slide;
+                animation-direction: normal;
+                animation-fill-mode: both;
+                animation-delay: 0;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                animation-duration: 90s;
+
+                & img {
+                    top: 0;
+                    left: 0;
+                }
+            }
+
+            & img {
+                top: 0;
+                left: 0;
+            }
+        }
+
+        .bg2 {
+            z-index: -3;
+
+            &--2 {
+                z-index: -3;
+
+                & img {
+                    bottom: 12%;
+                    left: 0;
+                }
+            }
+
+            & img {
+                bottom: 12%;
+                left: 0;
+            }
+        }
+
+        .bg3 {
+            z-index: -2;
+
+            &--2 {
+                z-index: -2;
+
+                & img {
+                    bottom: 3%;
+                    left: 0;
+                }
+            }
+
+            & img {
+                bottom: 3%;
+                left: 0;
+            }
+        }
+
+        .bg4 {
+            z-index: -1;
+
+            &--2 {
+                z-index: -1;
+
+                & img {
+                    bottom: -5%;
+                    left: 0;
+                }
+            }
+
+            & img {
+                bottom: -5%;
+                left: 0;
+            }
+        }
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

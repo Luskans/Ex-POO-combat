@@ -1,0 +1,61 @@
+.fighters {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .attackerHero {
+        position: absolute;
+        bottom: 14%;
+        left: 25%;
+
+        & img {
+            transform: scaleX(-1);
+            width: 150%;
+        }
+    }
+
+    .defenderHero {
+        position: absolute;
+        bottom: 14%;
+        left: 60%;
+
+        & img {
+            width: 150%;
+        }
+    }
+
+    .stats {
+        position: absolute;
+        top: 0;
+        left: 40%;
+        width: 400px;
+        height: 100px;
+        background: url('../images/card2.png');
+        background-size: cover;
+        border-radius: 0 0 20px 20px;
+
+        & .health {
+            &__attacker {
+                width: 140px;
+                height: 10px;
+            }
+            &__defender {
+                width: 140px;
+                height: 10px;
+            }   
+        }
+
+        & .energy {
+            &__attacker {
+                width: 140px;
+                height: 10px;
+            }
+            &__defender {
+                width: 140px;
+                height: 10px;
+            }   
+        }
+    }
+}
