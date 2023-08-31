@@ -15,7 +15,7 @@
         // box-shadow: 5px -2px 30px rgb(235, 235, 235);
         // box-shadow: 2px -2px 5px rgb(169, 169, 169);
         border: 1px solid rgb(169, 169, 169, 0.2);
-        padding: 20px;
+        padding: 1px;
         min-width: 200px;
         max-width: 200px;
         height: 320px;
@@ -72,26 +72,18 @@
         }
 
         &--health {
-            margin-bottom: -5px;
             width: 140px;
             max-height: 10px;
         }
 
         &--energy {
-            margin-bottom: 4px;
             width: 140px;
             max-height: 10px;
         }
 
-        & form {
-            display: flex;
-            justify-content: center;
-        }
-
-        &--buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+        &--stats {
+            height: 30px;
+            gap: 6px;
         }
 
         &--close {

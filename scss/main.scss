@@ -17,6 +17,14 @@ $tertiaryColor: #23a2c5;
     &:hover {
         background-color: darken($primaryColor, 15);
     }
+
+    &--grey {
+        background-color: $grey;
+
+        &:hover {
+            background-color: darken($grey, 10);
+        }
+    }
 }
 
 @import 'particles';
@@ -25,6 +33,7 @@ $tertiaryColor: #23a2c5;
 @import 'modals';
 @import 'background';
 @import 'fight';
+@import 'test';
 
 body {
     padding: 0;

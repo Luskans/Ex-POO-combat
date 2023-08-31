@@ -56,4 +56,4 @@ header('Content-Type: application/json');
 echo json_encode($encodedData); 
 
 
-// header('Location: ../../fight.php');
+// header('Location: ../../test.php');

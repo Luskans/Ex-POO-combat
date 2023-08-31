@@ -92,11 +92,12 @@
                         </div>
                     </div>
                 </div>
-                <form action="./controllers/fight/fight_selection.php" method="get">
+                <!-- <form action="./controllers/fight/fight_selection.php" method="get">
                     <input type="hidden" name="fight_attackerId" value="<?= $_SESSION['attacker']->getId() ?>">
                     <input type="hidden" name="fight_defenderId" value="<?= $_SESSION['defender']->getId() ?>">  
                     <input type="image" src="./images/versus.png" alt="Submit">  
-                </form>
+                </form> -->
+                <a href="./test.php"><button>versus</button></a>
             <?php } ?>
         </div>
         

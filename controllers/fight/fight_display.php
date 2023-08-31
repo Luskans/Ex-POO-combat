@@ -14,6 +14,7 @@ endif;
 
 <section class="fighters">
     
+        <!-------------- HEROES IMAGES ---------------------> 
         <div class="attackerHero">
             <img src="<?= $attacker->getImage(); ?>">
         </div>
@@ -22,7 +23,7 @@ endif;
             <img src="<?= $defender->getImage(); ?>">
         </div>
     
-        <div class="stats d-flex justify-content-around align-items-center">
+        <!-------------- HEALTH & ENERGY BAR --------------------->        <div class="stats d-flex justify-content-around align-items-center">
             <div class="stats__attacker d-flex flex-column gap-2">
                 <div class="progress health__attacker" role="progressbar" aria-valuenow="<?= $attacker->getHealth() ?>" aria-valuemin="0" aria-valuemax="<?= $attacker->getStats()['maxHealth'] ?>">
                     <?php $health_percentA = $attacker->getHealth() / $attacker->getStats()['maxHealth'] * 100; ?>
@@ -49,4 +50,6 @@ endif;
         </div>
     
 </section>
+
+<button class="battleStart">Fight !</button>
 

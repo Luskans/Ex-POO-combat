@@ -12,7 +12,23 @@
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 
+<?php
+require('./config/db.php');
+require('./config/autoload.php');
+require('./config/variables.php');
+
+session_start();
+if (!isset($_SESSION['attacker']) && !isset($_SESSION['defender']) && !isset($_SESSION['creationError'])) {
+    $_SESSION['attacker'] = "";
+    $_SESSION['defender'] = "";
+    $_SESSION['creationError'] = 0;
+}
+?>
+
 <body>
+<?php $heroRepository = new HeroRepository($db); ?>
+    <?php include_once('./controllers/fight/background_display.php'); ?>
+    <?php include_once('./controllers/fight/fight_display.php'); ?>
     <canvas id="canvas"></canvas>
     <script src="test.js"></script>
 </body>

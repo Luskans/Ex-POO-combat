@@ -60,3 +60,40 @@
         }
     }
 }
+
+.battleStart {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    z-index: 2;
+}
+
+@keyframes attackerHit {
+    0% {
+        transform: translateX(0) translateY(0) scaleX(-1); /* Départ initial */
+    }
+    25% {
+        transform: translateX(110%) translateY(-80px) scaleX(-1); /* Montée du saut */
+    }
+    60% {
+        transform: translateX(90%) translateY(0) scaleX(-1); /* Retour au sol */
+    }
+    100% {
+        transform: translateX(0) translateY(0) scaleX(-1); /* Déplacer vers la gauche */
+    }
+}
+
+@keyframes defenderHit {
+    0% {
+        transform: translateX(0) translateY(0); /* Départ initial */
+    }
+    25% {
+        transform: translateX(-110%) translateY(-80px); /* Montée du saut */
+    }
+    60% {
+        transform: translateX(-90%) translateY(0); /* Retour au sol */
+    }
+    100% {
+        transform: translateX(0) translateY(0); /* Déplacer vers la gauche */
+    }
+}

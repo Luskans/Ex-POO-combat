@@ -32,32 +32,34 @@
         $hero->initialize();
     ?>
 
-        <div class="management__card">
+        <div class="management__card d-flex flex-column align-items-center justify-content-center">
             <div class="management__card--image"><img src="<?= $hero->getImage() ?>"></div>
             <p class="management__card--name"><span><?= $hero->getName() ?></span> lvl <?= $hero->getLevel() ?></p>
 
-            <div class="progress management__card--health" role="progressbar" aria-valuenow="<?= $hero->getHealth() ?>" aria-valuemin="0" aria-valuemax="<?= $hero->getStats()['maxHealth'] ?>">
-                <?php $health_percent = $hero->getHealth() / $hero->getStats()['maxHealth'] * 100; ?>
-                <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" style="width: <?= $health_percent ?>%"><?= $hero->getHealth() ?></div>
-            </div>
-            <div class="progress management__card--energy" role="progressbar" aria-valuenow="<?= $hero->getEnergy() ?>" aria-valuemin="0" aria-valuemax="<?= $hero->getStats()['maxEnergy'] ?>">
-                <?php $energy_percent = $hero->getEnergy() / $hero->getStats()['maxEnergy'] * 100; ?>
-                <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" style="width: <?= $energy_percent ?>%"><?= $hero->getEnergy() ?></div>
+            <div class="management__card--stats d-flex flex-column">
+                <div class="progress management__card--health" role="progressbar" aria-valuenow="<?= $hero->getHealth() ?>" aria-valuemin="0" aria-valuemax="<?= $hero->getStats()['maxHealth'] ?>">
+                    <?php $health_percent = $hero->getHealth() / $hero->getStats()['maxHealth'] * 100; ?>
+                    <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" style="width: <?= $health_percent ?>%"><?= $hero->getHealth() ?></div>
+                </div>
+                <div class="progress management__card--energy" role="progressbar" aria-valuenow="<?= $hero->getEnergy() ?>" aria-valuemin="0" aria-valuemax="<?= $hero->getStats()['maxEnergy'] ?>">
+                    <?php $energy_percent = $hero->getEnergy() / $hero->getStats()['maxEnergy'] * 100; ?>
+                    <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" style="width: <?= $energy_percent ?>%"><?= $hero->getEnergy() ?></div>
+                </div>
             </div>
 
-            <div class="management__card--buttons">
-                <form action="./controllers/index/versus_selection.php" method="get">
-                    <input type="hidden" name="add_heroId" value="<?= $hero->getId() ?>"> 
-                    <button class="customButton" type="submit"> Choose </button> 
-                </form>
-          
-                <!-- <button class="management__card--close btn-close" data-bs-toggle="modal" data-bs-target="#deleteModal"></button> -->
+            <?php if ($_SESSION['attacker'] != "" && $_SESSION['defender'] != "") { ?>
+            <button class="customButton customButton--grey"> Choose </button>
+            <?php } else { ?>
+            <form action="./controllers/index/versus_selection.php" method="get">
+                <input type="hidden" name="add_heroId" value="<?= $hero->getId() ?>"> 
+                <button class="customButton" type="submit"> Choose </button> 
+            </form>
+            <?php } ?>
 
-                <form action="./controllers/index/hero_delete.php" method="post">
-                    <input type="hidden" name="delete_heroId" value="<?= $hero->getId() ?>"> 
-                    <button class="management__card--close btn-close" type="submit"> </button> 
-                </form>
-            </div>
+            <form action="./controllers/index/hero_delete.php" method="post">
+                <input type="hidden" name="delete_heroId" value="<?= $hero->getId() ?>"> 
+                <button class="management__card--close btn-close" type="submit"> </button> 
+            </form>
         </div>
 
     <?php } ?>
