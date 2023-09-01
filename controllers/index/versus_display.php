@@ -97,7 +97,7 @@
                     <input type="hidden" name="fight_defenderId" value="<?= $_SESSION['defender']->getId() ?>">  
                     <input type="image" src="./images/versus.png" alt="Submit">  
                 </form> -->
-                <a href="./test.php"><button>versus</button></a>
+                <a href="./fight.php"><button>versus</button></a>
             <?php } ?>
         </div>
         

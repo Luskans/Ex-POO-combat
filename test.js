@@ -105,7 +105,7 @@ async function fetchData() {
             }
 
             //DEFENDER ////
-            if (frame % (200 - (defender.stats.speed) ** 2) === 0 && (animationStartTimeB === null || Date.now() - animationStartTimeB >= 1000)) {
+            if (frame % (100 - (defender.stats.speed) ** 2) === 0 && (animationStartTimeB === null || Date.now() - animationStartTimeB >= 1000)) {
                 animationStartTimeB = Date.now();
                 defenderImage.style.animation = 'defenderHit 1s linear';
             }

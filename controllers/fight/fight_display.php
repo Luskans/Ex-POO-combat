@@ -48,8 +48,20 @@ endif;
                 </div>
             </div>
         </div>
+
+        <div class="hitD"></div>
+        <div class="hitA"></div>
     
 </section>
 
-<button class="battleStart">Fight !</button>
+<button class="battleStart"><img src="../../images/sword3.png"></button>
+<audio controls volume="0.1" autoplay loop>
+    <source src="./audios/battle.ogg" type="audio/ogg">
+</audio>
+<!-- <audio id="battleAudio" controls volume="0.1" src="./audios/battle.ogg" autoplay loop></audio> -->
+<audio id="blowAudio" src="./audios/blow.ogg"></audio>
+<audio id="slashAudio" src="./audios/slash.ogg"></audio>
+<audio id="selectAudio" src="./audios/select.ogg"></audio>
+<audio id="victoryAudio" src="./audios/victory.ogg"></audio>
+
 

@@ -8,7 +8,7 @@
     .attackerHero {
         position: absolute;
         bottom: 14%;
-        left: 15%;
+        left: calc(25% - 80px);
 
         & img {
             transform: scaleX(-1);
@@ -19,7 +19,7 @@
     .defenderHero {
         position: absolute;
         bottom: 14%;
-        left: 60%;
+        right: 25%;
 
         & img {
             width: 150%;
@@ -29,7 +29,8 @@
     .stats {
         position: absolute;
         top: 0;
-        left: 37.5%;
+        // left: 37.5%;
+        left: calc(50% - 190px);
         width: 380px;
         height: 80px;
         background-color: rgba(0, 0, 0, 0.3);
@@ -63,9 +64,56 @@
 
 .battleStart {
     position: absolute;
-    top: 20%;
-    left: 50%;
+    top: 14%;
+    // left: 42%;
+    left: calc(50% - 100px);
     z-index: 2;
+    background: transparent;
+    border: none;
+    // transition: <property> <duration> <timing-function> <delay>;
+
+        & img {
+            width: 200px;
+
+            &:active {
+                width: 210px;
+            }
+        }    
+}
+
+.hitA {
+    position: absolute;
+    bottom: 20%;
+    right: calc(25% - 20px);
+    width: 300px;
+    height: 300px;
+    background-image: url('../images/hit.png');
+    background-size: cover;
+    & img {
+        width: 100%;
+    }
+}
+
+.hitD {
+    position: absolute;
+    bottom: 20%;
+    left: calc(25% - 20px);
+    width: 300px;
+    height: 300px;
+    background-image: url('../images/hit.png');
+    background-size: cover;
+    // animation: hit 0.2s steps(4) forwards;
+    & img {
+        width: 100%;
+    }
+}
+
+canvas {
+	// cursor: crosshair;
+    z-index: 0;
+	position: absolute;
+    left: 0;
+    top: 0;
 }
 
 @keyframes attackerHit {
@@ -73,10 +121,10 @@
         transform: translateX(0) translateY(0) scaleX(-1); /* Départ initial */
     }
     25% {
-        transform: translateX(110%) translateY(-80px) scaleX(-1); /* Montée du saut */
+        transform: translateX(200%) translateY(-80px) scaleX(-1); /* Montée du saut */
     }
     60% {
-        transform: translateX(90%) translateY(0) scaleX(-1); /* Retour au sol */
+        transform: translateX(180%) translateY(0) scaleX(-1); /* Retour au sol */
     }
     100% {
         transform: translateX(0) translateY(0) scaleX(-1); /* Déplacer vers la gauche */
@@ -88,12 +136,21 @@
         transform: translateX(0) translateY(0); /* Départ initial */
     }
     25% {
-        transform: translateX(-110%) translateY(-80px); /* Montée du saut */
+        transform: translateX(-200%) translateY(-80px); /* Montée du saut */
     }
     60% {
-        transform: translateX(-90%) translateY(0); /* Retour au sol */
+        transform: translateX(-180%) translateY(0); /* Retour au sol */
     }
     100% {
         transform: translateX(0) translateY(0); /* Déplacer vers la gauche */
+    }
+}
+
+@keyframes hit {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 1200px 0;
     }
 }

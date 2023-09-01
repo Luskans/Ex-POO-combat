@@ -1,3 +1,12 @@
+@mixin slide {
+    animation-name: slide;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-delay: 0;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
 .background {
     overflow: hidden;
 
@@ -19,10 +28,7 @@
             }
         }
 
-        .bg1,
-        .bg2,
-        .bg3,
-        .bg4 {
+        .bg1, .bg2, .bg3, .bg4 {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -48,23 +54,13 @@
 
         .bg1 {
             z-index: -4;
-            animation-name: slide;
-            animation-direction: normal;
-            animation-fill-mode: both;
-            animation-delay: 0;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
+            @include slide;
             animation-duration: 90s;
 
 
             &--2 {
                 z-index: -4;
-                animation-name: slide;
-                animation-direction: normal;
-                animation-fill-mode: both;
-                animation-delay: 0;
-                animation-timing-function: linear;
-                animation-iteration-count: infinite;
+                @include slide;
                 animation-duration: 90s;
 
                 & img {
@@ -81,9 +77,13 @@
 
         .bg2 {
             z-index: -3;
+            // @include slide;
+            // animation-duration: 60s;
 
             &--2 {
                 z-index: -3;
+                // @include slide;
+                // animation-duration: 60s;
 
                 & img {
                     bottom: 12%;
@@ -99,9 +99,13 @@
 
         .bg3 {
             z-index: -2;
+            // @include slide;
+            // animation-duration: 40s;
 
             &--2 {
                 z-index: -2;
+                // @include slide;
+                // animation-duration: 40s;
 
                 & img {
                     bottom: 3%;
@@ -116,10 +120,14 @@
         }
 
         .bg4 {
-            z-index: -1;
+            z-index: 1;
+            // @include slide;
+            // animation-duration: 25s;
 
             &--2 {
-                z-index: -1;
+                z-index: 1;
+                // @include slide;
+                // animation-duration: 25s;
 
                 & img {
                     bottom: -5%;

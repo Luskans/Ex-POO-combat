@@ -37,8 +37,11 @@ if (!isset($_SESSION['attacker']) && !isset($_SESSION['defender']) && !isset($_S
     <?php include_once('./controllers/fight/background_display.php'); ?>
     <?php include_once('./controllers/fight/fight_display.php'); ?>
 
-    
+    <canvas id="canvas"></canvas>
 
+
+    <script src="./firework.js"></script>
+    <script src="./fight.js"></script>
 </body>
 
 </html>
