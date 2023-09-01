@@ -106,7 +106,9 @@
         width: 65px;
         text-align: center;
         background-color: #23a2c5;
-        color: white
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem;
     }
 
     & p:nth-child(2) {
@@ -115,7 +117,8 @@
         color: white;
         font-weight: bold;
         font-size: 2rem;
-        margin-top: -26px;
+        margin-top: -24px;
         margin-bottom: -1px;
+        font-family: Arial, Helvetica, sans-serif;
     }
 }

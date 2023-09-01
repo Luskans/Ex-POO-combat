@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet&family=Orbitron:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+
 $grey: #cccccc;
 $primaryColor: rgb(255, 170, 170);
 $secondaryColor: rgb(231, 242, 245);
@@ -40,6 +44,9 @@ body {
     margin: 0;
     & p, h2 {
         color: darken($textColor, 20);
+        // font-family: 'Orbitron', sans-serif;
+        font-family: 'Caveat', cursive;
+        font-size: 1.3rem;
     }
     & .customButton {
         @include customButton;

@@ -10,6 +10,9 @@
             <div class="bg3">
                 <img src="./images/bg3.png">
             </div>
+            <div class="clouds">
+                <img src="./images/clouds4.png">
+            </div>
             <div class="bg4">
                 <img src="./images/bg4.png">
             </div>
@@ -23,6 +26,9 @@
             </div>
             <div class="bg3--2">
                 <img src="./images/bg3.png">
+            </div>
+            <div class="clouds--2">
+                <img src="./images/clouds4.png">
             </div>
             <div class="bg4--2">
                 <img src="./images/bg4.png">
