@@ -1,12 +1,16 @@
+import { startFirework } from './fight.js';
+
 const battleStart2 = document.querySelector('.battleStart');
 battleStart2.addEventListener('mousedown', function (e) {
     // e.preventDefault();
     battleclic = true;
+    
 });
 
 battleStart2.addEventListener('mouseup', function (e) {
     // e.preventDefault();
     battleclic = false;
+    
 });
 
 
@@ -38,7 +42,7 @@ var canvas = document.getElementById('canvas'),
     limiterTotal = 5,
     limiterTick = 0,
     // this will time the auto launches of fireworks, one launch per 80 loop ticks
-    timerTotal = 80,
+    timerTotal = 10,
     timerTick = 0,
     mousedown = false,
     battleclic = false,
@@ -135,8 +139,9 @@ Firework.prototype.draw = function () {
     // move to the last tracked coordinate in the set, then draw a line to the current x and y
     ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length - 1][1]);
     ctx.lineTo(this.x, this.y);
-    ctx.strokeStyle = 'hsl(' + hue + ', 100%, ' + this.brightness + '%)';
-    // ctx.stroke();
+    // ctx.strokeStyle = 'hsl(' + hue + ', 100%, ' + this.brightness + '%)';
+    ctx.strokeStyle = 'white';
+    ctx.stroke();
 
     ctx.beginPath();
     // draw the target for this firework with a pulsing circle
@@ -243,25 +248,28 @@ function loop() {
     }
 
     // launch fireworks automatically to random coordinates, when the mouse isn't down
-    // if (timerTick >= timerTotal) {
-    //     if (!mousedown) {
-    //         // start the firework at the bottom middle of the screen, then set the random target coordinates, the random y coordinates will be set within the range of the top half of the screen
-    //         fireworks.push(new Firework(cw / 2, ch, random(0, cw), random(0, ch / 2)));
-    //         timerTick = 0;
-    //     } else if (!battleclic) {
-    //         fireworks.push(new Firework(cw / 2, ch, random(0, cw), random(0, ch / 2)));
-    //         timerTick = 0;
-    //     }
-    // } else {
-    //     timerTick++;
-    // }
+    if (timerTick >= timerTotal) {
+        if (!mousedown && startFirework) {
+            // start the firework at the bottom middle of the screen, then set the random target coordinates, the random y coordinates will be set within the range of the top half of the screen
+            fireworks.push(new Firework(cw / 2, ch, random(0, cw), random(0, ch / 2)));
+            timerTick = 0;
+        // } else if (!battleclic) {
+        //     fireworks.push(new Firework(cw / 2, ch, random(0, cw), random(0, ch / 2)));
+        //     timerTick = 0;
+        // if (startFirework) {
+        //     fireworks.push(new Firework(cw / 2, ch, random(0, cw), random(0, ch / 2)));
+        //     timerTick = 0;
+        }
+    } else {
+        timerTick++;
+    }
 
     // limit the rate at which fireworks get launched when mouse is down
     if (limiterTick >= limiterTotal) {
         if (mousedown) {
             // start the firework at the bottom middle of the screen, then set the current mouse coordinates as the target
-            // fireworks.push(new Firework(cw / 2, ch, mx, my));
-            // limiterTick = 0;
+            fireworks.push(new Firework(cw / 2, ch, mx, my));
+            limiterTick = 0;
         } else if (battleclic) {
             // fireworks.push(new Firework(cw / 2, ch, random(0, cw), random(0, ch / 2)));
             fireworks.push(new Firework(cw / 2, ch / 5, cw / 2, ch / 5));

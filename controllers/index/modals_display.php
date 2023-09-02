@@ -7,7 +7,7 @@
         <div class="modal-content">
             <div class="modal-header d-flex justify-content-center">
                 <h2 class="modal-title" id="staticBackdropLabel">Character creation</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close cancelAudio" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form class="d-flex flex-column align-items-center justify-content-center gap-3" action="./controllers/index/hero_creation.php" method="post" id="hero_creation">
@@ -48,7 +48,7 @@
                 </form>
             </div>
             <div class="modal-footer d-flex justify-content-center">
-                <button class="customButton" type="submit" form="hero_creation">Create</button>
+                <button class="customButton confirmAudio" type="submit" form="hero_creation">Create</button>
             </div>
         </div>
     </div>
@@ -64,10 +64,10 @@
             <div class="modal-body text-center">
                 <p>Do you really want to delete this character ?
                 <div class="d-flex justify-content-center gap-5">
-                    <button type="button" class="customButton" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="customButton cancelAudio" data-bs-dismiss="modal">Cancel</button>
                     <form action="./controllers/index/hero_delete.php" method="post">
                         <input type="hidden" name="delete_heroId" value="<?= $hero->getId() ?>"> 
-                        <button class="customButton" type="submit">Confirm</button>    
+                        <button class="customButton confirmAudio" type="submit">Confirm</button>    
                     </form>
                 </div>
             </div>

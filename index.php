@@ -50,12 +50,19 @@ if (!isset($_SESSION['attacker']) && !isset($_SESSION['defender']) && !isset($_S
         <?php include_once('./controllers/index/versus_display.php') ?>
         <?php include_once('./controllers/index/heroes_display.php') ?>
         <?php include_once('./controllers/index/modals_display.php') ?>
+
+        <audio id="menuAudio" volume="0.1" src="./audios/menu.ogg" autoplay loop></audio>
+        <audio id="slashAudio" src="./audios/slash.ogg"></audio>
+        <audio id="selectAudio" src="./audios/select.ogg"></audio>
+        <audio id="cancelAudio" src="./audios/cancel.ogg"></audio>
+       
     </main>
     
     <footer class="d-flex justify-content-center align-items-center">
         <p>Copyright &copy; 2023 - Sylvain</p>
     </footer>
 
+    <script type="module" src="./index.js"></script>
 </body>
 
 </html>

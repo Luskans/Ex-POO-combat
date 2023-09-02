@@ -40,8 +40,10 @@ if (!isset($_SESSION['attacker']) && !isset($_SESSION['defender']) && !isset($_S
     <canvas id="canvas"></canvas>
 
 
-    <script src="./firework.js"></script>
-    <script src="./fight.js"></script>
+    
+    
+    <script type="module" src="./firework.js"></script>
+    <script type="module" src="./fight.js"></script>
 </body>
 
 </html>
