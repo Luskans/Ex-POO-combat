@@ -18,6 +18,9 @@ let energyPercentD;
 let expPercentA;
 let expPercentD;
 
+let arrayDatas = []; // Will receive the two instances of heroes at the end of the battle
+let jsonDatas; // Will receive the json of arrayDatas
+
 const hitD = document.querySelector('.hitD');
 const hitA = document.querySelector('.hitA');
 const popup = document.querySelector('.popup');
@@ -55,8 +58,8 @@ const expIntD = document.querySelector('.exp__defender div');
 /////////////////////
 
 async function fetchData() {
-    try {
-        const response = await fetch('./controllers/fight/fight_selection.php');
+    try {;
+        const response = await fetch('./controllers/fight/fight_sending.php');
         const data = await response.json();
 
         class Hero {
@@ -135,10 +138,8 @@ async function fetchData() {
                 attackerImage.style.animation = 'collapseA 2s linear forwards';
             }
             collapseAudio.play();
-            console.log(startFirework);
             setTimeout(function() {
                 startFirework = true;
-                console.log(startFirework);
                 victoryAudio.play();
                 victoryPage();
             }, 4000);
@@ -155,8 +156,51 @@ async function fetchData() {
                 victoryD.style.animation = 'victoryPage 1s ease-out forwards';
                 updateHealthBarD2();
                 updateExpBarD();
-            } 
+            }
+            returnDatas(attacker, defender);
         }
+
+        // function returnDatas() {
+        //     arrayDatas.push(attacker);
+        //     arrayDatas.push(defender);
+        //     console.log(arrayDatas);
+        //     jsonDatas = JSON.stringify(arrayDatas);
+        //     console.log(jsonDatas);
+            
+        //     fetch('./controllers/fight/fight_return.php', {
+        //         method: 'POST',
+        //         headers: {'Content-Type': 'application/json'},
+        //         body: jsonDatas,
+        //     });
+        // }
+
+        function returnDatas(attacker, defender) {
+            // Crée un objet contenant les données mises à jour des héros
+            const updatedData = {
+                attacker: {
+                    health: attacker.health,
+                    energy: attacker.energy,
+                    exp: attacker.exp,
+                    // Autres propriétés mises à jour si nécessaire
+                },
+                defender: {
+                    health: defender.health,
+                    energy: defender.energy,
+                    exp: defender.exp,
+                    // Autres propriétés mises à jour si nécessaire
+                }
+            };
+        
+            // Convertit l'objet en JSON
+            const jsonDatas = JSON.stringify(updatedData);
+
+            fetch('./controllers/fight/fight_return.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: jsonDatas
+            });
+        }
+
 
         function updateHealthBarA() {
             healthExtA.ariaValueNow = attacker.health;

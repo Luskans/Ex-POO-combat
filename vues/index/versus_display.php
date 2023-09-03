@@ -82,7 +82,7 @@
         <div class="versus__side--middle">
             <?php
             if (empty($_SESSION['attacker']) || (empty($_SESSION['defender']) || $_SESSION['attacker'] == "" || $_SESSION['attacker'] == "")) { ?>
-                <div><img class="cancelAudio" src="./images/versus2.png"></div>
+                <div><img class="cancelAudio" src="./utilities/images/others/versus2.png"></div>
             <?php } else { ?>
                 <div class="vertical-centered-box">
                     <div class="content">
@@ -92,13 +92,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- <form action="./controllers/fight/fight_selection.php" method="get">
-                    <input type="hidden" name="fight_attackerId" value="<?= $_SESSION['attacker']->getId() ?>">
-                    <input type="hidden" name="fight_defenderId" value="<?= $_SESSION['defender']->getId() ?>">  
-                    <input type="image" src="./images/versus.png" alt="Submit">  
-                </form> -->
-                <!-- <div><a href="./fight.php" class="versusLink"><img class="confirmAudio" src="./images/versus.png"></a></div> -->
-                <div><img class="versusLink" src="./images/versus.png"></div>
+        
+                <div><img class="versusLink" src="./utilities/images/others/versus.png"></div>
             <?php } ?>
         </div>
         

@@ -1,13 +1,13 @@
 <?php
 
 $imagesArray = array(
-    'warrior' => './images/classes/doppelsoeldner_m.gif',
-    'archer' => './images/classes/ranger_m.gif',
-    'wizard' => './images/classes/sage_m.gif',
-    'priest' => './images/classes/monk_m.gif',
-    'monk' => './images/classes/nakmuay_m.gif',
-    'duellist' => './images/classes/fencer_m.gif',
-    'paladin' => './images/classes/hoplite_m.gif'
+    'warrior' => './utilities/images/classes/doppelsoeldner_m.gif',
+    'archer' => './utilities/images/classes/ranger_m.gif',
+    'wizard' => './utilities/images/classes/sage_m.gif',
+    'priest' => './utilities/images/classes/monk_m.gif',
+    'monk' => './utilities/images/classes/nakmuay_m.gif',
+    'duellist' => './utilities/images/classes/fencer_m.gif',
+    'paladin' => './utilities/images/classes/hoplite_m.gif'
 );
 
 $descriptionsArray = array(

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./utilities/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
@@ -13,9 +13,9 @@
 </head>
 
 <?php
-require('./config/db.php');
-require('./config/autoload.php');
-require('./config/variables.php');
+require('./utilities/config/db.php');
+require('./utilities/config/autoload.php');
+require('./utilities/config/variables.php');
 
 session_start();
 if (!isset($_SESSION['attacker']) && !isset($_SESSION['defender']) && !isset($_SESSION['creationError'])) {
@@ -34,8 +34,8 @@ if (!isset($_SESSION['attacker']) && !isset($_SESSION['defender']) && !isset($_S
 
 <body>
     <header class="d-flex flex-column justify-content-center align-items-center">
-        <img src="./images/title1.png">
-        <img src="./images/title2.png">
+        <img src="./utilities/images/others/title1.png">
+        <img src="./utilities/images/others/title2.png">
 
         <div class="animation-wrapper">
             <div class="particle particle-1"></div>
@@ -47,14 +47,14 @@ if (!isset($_SESSION['attacker']) && !isset($_SESSION['defender']) && !isset($_S
     
     <main class="d-flex flex-column align-items-center gap-5">
         <?php $heroRepository = new HeroRepository($db); ?>
-        <?php include_once('./controllers/index/versus_display.php') ?>
-        <?php include_once('./controllers/index/heroes_display.php') ?>
-        <?php include_once('./controllers/index/modals_display.php') ?>
+        <?php include_once('./vues/index/versus_display.php') ?>
+        <?php include_once('./vues/index/heroes_display.php') ?>
+        <?php include_once('./vues/index/modals_display.php') ?>
 
-        <audio id="menuAudio" volume="0.1" src="./audios/menu.ogg" autoplay loop></audio>
-        <audio id="slashAudio" src="./audios/slash.ogg"></audio>
-        <audio id="selectAudio" src="./audios/select.ogg"></audio>
-        <audio id="cancelAudio" src="./audios/cancel.ogg"></audio>
+        <audio id="menuAudio" volume="0.1" src="./utilities/audios/menu.ogg" autoplay loop></audio>
+        <audio id="slashAudio" src="./utilities/audios/slash.ogg"></audio>
+        <audio id="selectAudio" src="./utilities/audios/select.ogg"></audio>
+        <audio id="cancelAudio" src="./utilities/audios/cancel.ogg"></audio>
        
     </main>
     
@@ -62,7 +62,7 @@ if (!isset($_SESSION['attacker']) && !isset($_SESSION['defender']) && !isset($_S
         <p>Copyright &copy; 2023 - Sylvain</p>
     </footer>
 
-    <script type="module" src="./index.js"></script>
+    <script type="module" src="./utilities/js/index.js"></script>
 </body>
 
 </html>

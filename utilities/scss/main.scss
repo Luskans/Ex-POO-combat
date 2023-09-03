@@ -37,17 +37,17 @@ $tertiaryColor: #23a2c5;
 @import 'modals';
 @import 'background';
 @import 'fight';
-// @import 'test';
 
 body {
     padding: 0;
     margin: 0;
+
     & p, h2 {
         color: darken($textColor, 20);
-        // font-family: 'Orbitron', sans-serif;
         font-family: 'Caveat', cursive;
         font-size: 1.3rem;
     }
+
     & .customButton {
         @include customButton;
     }
@@ -55,7 +55,8 @@ body {
 
 header {
     height: 400px;
-    background: url('../images/sky.jpg');
+    background: url('../images/others/sky.jpg');
+    // background: url('./utilities/images/others/sky.jpg');
     background-size: cover;
     background-position: center;
     position: relative;

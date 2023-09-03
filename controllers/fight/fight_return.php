@@ -1,10 +1,14 @@
 <?php
 
-$requestData = json_decode(file_get_contents('php://input'), true);
+// Récupérer les données JSON depuis la requête POST
+$jsonDatas = file_get_contents('php://input');
 
-// Faites quelque chose avec les données reçues du JavaScript
+// Décoder les données JSON en un tableau associatif
+$datas = json_decode($jsonDatas, true);
 
-// Pour renvoyer une réponse en JSON
-header('Content-Type: application/json');
-echo json_encode(array('message' => 'Données reçues et traitées.'));
-?>
+// Accéder aux objets et à leurs propriétés
+// $objet1 = json_decode($data['objet1']);
+// $objet2 = json_decode($data['objet2']);
+
+var_dump($jsonDatas);
+var_dump($datas);

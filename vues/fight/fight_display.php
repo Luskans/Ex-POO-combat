@@ -76,22 +76,8 @@ endif;
                 </div>
             </div>
 
-            <!-- <div class="d-flex flex-column gap-1">
-                <p>Health regenerated: +<?= $attacker->getStats()['regen'] * 10 ?></p>
-                <div class="progress health__attacker" role="progressbar" aria-valuenow="<?= $attacker->getHealth() ?>" aria-valuemin="0" aria-valuemax="<?= $attacker->getStats()['maxHealth'] ?>">
-                    <?php $health_percentA = $attacker->getHealth() / $attacker->getStats()['maxHealth'] * 100; ?>
-                    <div class="progress-bar bg-danger" style="width: <?= $health_percentA ?>%"><?= $attacker->getHealth() ?></div>
-                </div>
-
-                <p>Experience gained: +<?= $defender->getExpGiven() ?></p>
-                <div class="progress exp__attacker" role="progressbar" aria-valuenow="<?= $attacker->getExp() ?>" aria-valuemin="0" aria-valuemax="<?= $attacker->getMaxExp() ?>">
-                    <?php $exp_percentA = $attacker->getExp() / $attacker->getmaxExp() * 100; ?>
-                    <div class="progress-bar bg-warning" style="width: <?= $exp_percentA ?>%"><?= $attacker->getExp() ?></div>
-                </div>
-            </div> -->
-
             <p class="levelUp">LEVEL UP !</p>
-            <a href="./index.php"><button class="customButton">Next</button></a>
+            <a href="./controllers/fight/fight_return.php"><button class="customButton">Next</button></a>
         </div>
 
         <div class="victoryD flex-column justify-content-center align-items-center">
@@ -110,33 +96,19 @@ endif;
                 </div>
             </div>
 
-            <!-- <div class="d-flex flex-column gap-1">
-                <p>Health regenerated: +<?= $defender->getStats()['regen'] * 10 ?></p>
-                <div class="progress health__defender" role="progressbar" aria-valuenow="<?= $defender->getHealth() ?>" aria-valuemin="0" aria-valuemax="<?= $defender->getStats()['maxHealth'] ?>">
-                    <?php $health_percentD = $defender->getHealth() / $defender->getStats()['maxHealth'] * 100; ?>
-                    <div class="progress-bar bg-danger" style="width: <?= $health_percentA ?>%"><?= $defender->getHealth() ?></div>
-                </div>
-
-                <p>Experience gained: +<?= $attacker->getExpGiven() ?></p>
-                <div class="progress exp__defender" role="progressbar" aria-valuenow="<?= $defender->getExp() ?>" aria-valuemin="0" aria-valuemax="<?= $defender->getMaxExp() ?>">
-                    <?php $exp_percentD = $defender->getExp() / $defender->getmaxExp() * 100; ?>
-                    <div class="progress-bar bg-warning" style="width: <?= $exp_percentD ?>%"><?= $defender->getExp() ?></div>
-                </div>
-            </div> -->
-
             <p class="levelUp">LEVEL UP !</p>
-            <a href="./index.php"><button class="customButton next">Next</button></a>
+            <a href="./controllers/fight/fight_return.php"><button class="customButton next">Next</button></a>
         </div>
     
 </section>
 
-<button class="battleStart"><img src="./images/sword3.png"></button>
+<button class="battleStart"><img src="./utilities/images/others/sword3.png"></button>
 
-<audio id="battleAudio" autoplay loop volume="0.1" src="./audios/battle.ogg" autoplay loop></audio>
-<audio id="blowAudio" src="./audios/blow.ogg"></audio>
-<audio id="slashAudio" src="./audios/slash.ogg"></audio>
-<audio id="selectAudio" src="./audios/select.ogg"></audio>
-<audio id="victoryAudio" src="./audios/victory.ogg"></audio>
-<audio id="collapseAudio" src="./audios/collapse1.mp3"></audio>
+<audio id="battleAudio" autoplay loop volume="0.1" src="./utilities/audios/battle.ogg"></audio>
+<audio id="blowAudio" src="./utilities/audios/blow.ogg"></audio>
+<audio id="slashAudio" src="./utilities/audios/slash.ogg"></audio>
+<audio id="selectAudio" src="./utilities/audios/select.ogg"></audio>
+<audio id="victoryAudio" src="./utilities/audios/victory.ogg"></audio>
+<audio id="collapseAudio" src="./utilities/audios/collapse1.mp3"></audio>
 
 

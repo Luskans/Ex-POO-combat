@@ -17,31 +17,31 @@
                     <p>Class :</p>
                     <div class="d-flex justify-content-center align-items-center flex-wrap">
                         <div class="modal-image d-flex flex-sm-column">
-                            <label for="warrior"><img src="./images/classes/doppelsoeldner_m.gif"></label>
+                            <label for="warrior"><img src="./utilities/images/classes/doppelsoeldner_m.gif"></label>
                             <input type="radio" name="class" value="Warrior" required>
                         </div>
                         <div class="modal-image d-flex flex-sm-column">
-                            <label for="archer"><img src="./images/classes/ranger_m.gif"></label>
+                            <label for="archer"><img src="./utilities/images/classes/ranger_m.gif"></label>
                             <input type="radio" name="class" value="Archer">
                         </div>
                         <div class="modal-image d-flex flex-sm-column">
-                            <label for="wizard"><img src="./images/classes/sage_m.gif"></label>
+                            <label for="wizard"><img src="./utilities/images/classes/sage_m.gif"></label>
                             <input type="radio" name="class" value="Wizard">
                         </div>
                         <div class="modal-image d-flex flex-sm-column">
-                            <label for="priest"><img src="./images/classes/monk_m.gif"></label>
+                            <label for="priest"><img src="./utilities/images/classes/monk_m.gif"></label>
                             <input type="radio" name="class" value="Priest">
                         </div>
                         <div class="modal-image d-flex flex-sm-column">
-                            <label for="monk"><img src="./images/classes/nakmuay_m.gif"></label>
+                            <label for="monk"><img src="./utilities/images/classes/nakmuay_m.gif"></label>
                             <input type="radio" name="class" value="Monk">
                         </div>
                         <div class="modal-image d-flex flex-sm-column">
-                            <label for="duellist"><img src="./images/classes/fencer_m.gif"></label>
+                            <label for="duellist"><img src="./utilities/images/classes/fencer_m.gif"></label>
                             <input type="radio" name="class" value="Duellist">
                         </div>
                         <div class="modal-image d-flex flex-sm-column">
-                            <label for="paladin"><img src="./images/classes/hoplite_m.gif"></label>
+                            <label for="paladin"><img src="./utilities/images/classes/hoplite_m.gif"></label>
                             <input type="radio" name="class" value="Paladin">
                         </div>
                     </div>

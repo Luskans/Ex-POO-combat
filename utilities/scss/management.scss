@@ -1,19 +1,14 @@
 .management {
     width: 100%;
-    // background-color: $secondaryColor;
     background-color: lighten($tertiaryColor, 15);
-    // background-color: rgb(97, 126, 243);
     padding: 30px 0 30px 0;
 
     &__card {
         display: flex;
         flex-direction: column;
         align-items: center;
-        // background: url('../images/bg3.png');
-        background: url('../images/card4.png');
+        background: url('../images/others/card4.png');
         border-radius: 10px;
-        // box-shadow: 5px -2px 30px rgb(235, 235, 235);
-        // box-shadow: 2px -2px 5px rgb(169, 169, 169);
         border: 1px solid rgb(169, 169, 169, 0.2);
         padding: 1px;
         min-width: 200px;

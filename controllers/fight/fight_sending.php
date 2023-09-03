@@ -1,8 +1,8 @@
 <?php
 
-require('../../config/db.php');
-require('../../config/autoload.php');
-require('../../config/variables.php');
+require('../../utilities/config/db.php');
+require('../../utilities/config/autoload.php');
+require('../../utilities/config/variables.php');
 
 session_start();
 
@@ -54,6 +54,3 @@ $encodedData = array(
 
 header('Content-Type: application/json');
 echo json_encode($encodedData); 
-
-
-// header('Location: ../../test.php');

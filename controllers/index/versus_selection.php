@@ -1,7 +1,7 @@
 <?php
 
-require('../../config/db.php');
-require('../../config/autoload.php');
+require('../../utilities/config/db.php');
+require('../../utilities/config/autoload.php');
 session_start();
 
 
