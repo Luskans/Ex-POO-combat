@@ -1,5 +1,6 @@
 <?php
 
+var_dump($_POST, $GLOBALS);
 // Récupérer les données JSON depuis la requête POST
 $jsonDatas = file_get_contents('php://input');
 
@@ -12,3 +13,4 @@ $datas = json_decode($jsonDatas, true);
 
 var_dump($jsonDatas);
 var_dump($datas);
+

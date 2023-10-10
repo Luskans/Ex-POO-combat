@@ -97,7 +97,7 @@ endif;
             </div>
 
             <p class="levelUp">LEVEL UP !</p>
-            <a href="./controllers/fight/fight_return.php"><button class="customButton next">Next</button></a>
+            <button class="customButton next">Next</button>
         </div>
     
 </section>
