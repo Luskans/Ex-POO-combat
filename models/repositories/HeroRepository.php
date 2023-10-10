@@ -126,6 +126,24 @@ class HeroRepository {
 
     // UPDATE THE HERO SELECTED PREVIOUSLY
 
+    public function update(array $heroData)
+    {
+        $request = $this->db->prepare(
+            'UPDATE heroes 
+            SET level = :level, exp = :exp, health = :health, energy = :energy 
+            WHERE id = :id'
+        );
+        $request->execute([
+            'id' => $heroData['id'],
+            'level' => $heroData['level'],
+            'exp' => $heroData['exp'],
+            'health' => $heroData['health'],
+            'energy' => $heroData['energy'],
+        ]);
+    }
+
+    
+
     // public function updateDatabase(array $heroData)
     // {
     //     $request = $this->db->prepare('DELETE FROM heroes WHERE id = :id');
@@ -148,14 +166,4 @@ class HeroRepository {
             'energy' => 0
         ]);
     }
-
-    // public function update(Hero $hero)
-    // {
-    //     $request = $this->db->prepare('UPDATE heroes SET health_point = :health_point WHERE id = :id');
-    //     $request->execute([
-    //         'health_point' => $hero->getHealth(),
-    //         'id' => $hero->getId()
-    //     ]);
-    // }
-
 }

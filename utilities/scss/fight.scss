@@ -110,6 +110,34 @@
     }
 }
 
+.hitA2 {
+    position: absolute;
+    bottom: 20%;
+    right: calc(25% - 20px);
+    width: 192px;
+    height: 192px;
+    background-image: url('../images/others/animation.png');
+    background-size: cover;
+
+    & img {
+        width: 100%;
+    }
+}
+
+.hitD2 {
+    position: absolute;
+    bottom: 20%;
+    left: calc(25% - 20px);
+    width: 192px;
+    height: 192px;
+    background-image: url('../images/others/animation.png');
+    background-size: cover;
+
+    & img {
+        width: 100%;
+    }
+}
+
 .popup {
     position: absolute;
     bottom: 47%;
@@ -119,7 +147,8 @@
     display: none;
     // text-shadow: 2px 2px rgb(255, 0, 0);
     -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: #dc3545;
+    // -webkit-text-stroke-color: #dc3545;
+    -webkit-text-stroke-color: #777777;
     font-weight: bold;        
 }
 
@@ -219,6 +248,15 @@ canvas {
     }
     100% {
         background-position: 1200px 0;
+    }
+}
+
+@keyframes hit2 {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 4800px 0;
     }
 }
 

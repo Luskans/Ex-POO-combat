@@ -23,6 +23,9 @@ let jsonDatas; // Will receive the json of arrayDatas
 
 const hitD = document.querySelector('.hitD');
 const hitA = document.querySelector('.hitA');
+const hitD2 = document.querySelector('.hitD2');
+const hitA2 = document.querySelector('.hitA2');
+
 const popup = document.querySelector('.popup');
 const victoryA = document.querySelector('.victoryA');
 const victoryD = document.querySelector('.victoryD');
@@ -80,17 +83,29 @@ async function fetchData() {
             }
 
             damageTarget(target) {
-                let random = Math.floor(Math.random() * 10) + 1;
-                if (random <= this.stats.critical) {
-                    damageNumber = (this.stats.attack - target.stats.defense) * 2;
-                    popup.style.color = '#ffc107';
-                    // popup.style.color = 'white';
-                    popup.style.fontSize = '3.2rem';
+                let random = Math.floor(Math.random() * 10) + 1; // entre 1 et 10
+                if (this.energy == 10) {
+                    damageNumber = this.level * 10 + 10;
+                    popup.style.color = '#dc3545'; // rouge
+                    popup.style.fontSize = '3.4rem';
+                    this.energy = -2;
                 } else {
-                    damageNumber = this.stats.attack - target.stats.defense;
-                    // popup.style.color = '#dc3545';
-                    popup.style.color = 'white'
-                    popup.style.fontSize = '3rem';
+                    if (random <= this.stats.evasion) {
+                        damageNumber = 0;
+                        popup.style.color = '#43b8ff'; // bleu
+                        popup.style.fontSize = '3.2rem';
+                    } else {
+                        if (random <= this.stats.critical) {
+                            damageNumber = (this.stats.attack - target.stats.defense) * 2;
+                            popup.style.color = '#ffc107'; // jaune
+                            popup.style.fontSize = '3.2rem';
+                        } else {
+                            damageNumber = this.stats.attack - target.stats.defense;
+                            // popup.style.color = '#dc3545';
+                            popup.style.color = 'white'
+                            popup.style.fontSize = '3rem';
+                        }
+                    }
                 }
                 target.health -= damageNumber;
                 if (this.energy <= 8) {
@@ -157,18 +172,18 @@ async function fetchData() {
                 updateHealthBarD2();
                 updateExpBarD();
             }
-            // returnDatas(attacker, defender);
-            let nextButton = document.querySelector('.next')
+            returnDatas();
+            // let nextButton = document.querySelector('.next')
 
-            nextButton.addEventListener('click', ()=> {
-                returnDatas();
-            })
+            // nextButton.addEventListener('click', ()=> {
+            //     returnDatas();
+            //     window.location.href = './controllers/fight/fight_return.php';
+            // })
         }
 
         function returnDatas() {
             arrayDatas.push(attacker);
             arrayDatas.push(defender);
-            console.log(arrayDatas);
             jsonDatas = JSON.stringify(arrayDatas);
             console.log(jsonDatas);
             
@@ -177,7 +192,7 @@ async function fetchData() {
                 headers: {'Content-Type': 'application/json'},
                 body: jsonDatas,
             });
-        }
+        }   
 
         function updateHealthBarA() {
             healthExtA.ariaValueNow = attacker.health;
@@ -289,11 +304,19 @@ async function fetchData() {
                     defenderImage.style.animation = 'none';
                     attacker.turn = false;
                     defender.turn = true;
-                    hitA.style.animation = 'hit 0.3s steps(4) forwards';
-                    setTimeout(function() {
-                        hitA.style.animation = 'none';
-                    }, 500);
-                    blowAudio.play();
+                    if (attacker.energy === 10) {
+                        hitA2.style.animation = 'hit2 1s steps(25) forwards';
+                        setTimeout(function() {
+                            hitA2.style.animation = 'none';
+                        }, 1200);
+                        slashAudio.play();
+                    } else {
+                        hitA.style.animation = 'hit 0.3s steps(4) forwards';
+                        setTimeout(function() {
+                            hitA.style.animation = 'none';
+                        }, 500);
+                        blowAudio.play();
+                    }
                     attacker.damageTarget(defender);
                     updateHealthBarD();
                     updateEnergyBarA();
@@ -305,11 +328,19 @@ async function fetchData() {
                     attackerImage.style.animation = 'none';
                     defender.turn = false;
                     attacker.turn = true;
-                    hitD.style.animation = 'hit 0.3s steps(4) forwards';
-                    setTimeout(function() {
-                        hitD.style.animation = 'none';
-                    }, 500);
-                    blowAudio.play();
+                    if (defender.energy === 10) {
+                        hitD2.style.animation = 'hit2 1s steps(25) forwards';
+                        setTimeout(function() {
+                            hitD2.style.animation = 'none';
+                        }, 1000);
+                        slashAudio.play();
+                    } else {
+                        hitD.style.animation = 'hit 0.3s steps(4) forwards';
+                        setTimeout(function() {
+                            hitD.style.animation = 'none';
+                        }, 500);
+                        blowAudio.play();
+                    }
                     defender.damageTarget(attacker);
                     updateHealthBarA();
                     updateEnergyBarD()
@@ -325,31 +356,31 @@ async function fetchData() {
 
 fetchData();
 
-async function returnDatas() {
-    // Crée un objet contenant les données mises à jour des héros
-    const updatedData = {
-        attacker: {
-            health: 100,
-            energy: 10,
-            exp: 50,
-            // Autres propriétés mises à jour si nécessaire
-        },
-        defender: {
-            health: 60,
-            energy: 3,
-            exp: 90,
-            // Autres propriétés mises à jour si nécessaire
-        }
-    };
+// async function returnDatas() {
+//     // Crée un objet contenant les données mises à jour des héros
+//     const updatedData = {
+//         attacker: {
+//             health: 100,
+//             energy: 10,
+//             exp: 50,
+//             // Autres propriétés mises à jour si nécessaire
+//         },
+//         defender: {
+//             health: 60,
+//             energy: 3,
+//             exp: 90,
+//             // Autres propriétés mises à jour si nécessaire
+//         }
+//     };
 
-    // Convertit l'objet en JSON
-    const jsonDatas = JSON.stringify(updatedData);
-    console.log(updatedData);
-    console.log(jsonDatas);
+//     // Convertit l'objet en JSON
+//     const jsonDatas = JSON.stringify(updatedData);
+//     console.log(updatedData);
+//     console.log(jsonDatas);
 
-    await fetch('./controllers/fight/fight_return.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: jsonDatas
-    });
-}
+//     await fetch('./controllers/fight/fight_return.php', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: jsonDatas
+//     });
+// }

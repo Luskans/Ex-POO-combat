@@ -57,6 +57,8 @@ endif;
         <!-------------- ANIMATION & DAMAGE ---------------------> 
         <div class="hitD"></div>
         <div class="hitA"></div>
+        <div class="hitD2"></div>
+        <div class="hitA2"></div>
         <p class="popup"></div>
 
         <!-------------- VICTORY --------------------->
@@ -77,7 +79,12 @@ endif;
             </div>
 
             <p class="levelUp">LEVEL UP !</p>
-            <a href="./controllers/fight/fight_return.php"><button class="customButton">Next</button></a>
+            <!-- <a href="./controllers/fight/fight_return.php"><button class="customButton">Next</button></a> -->
+            <form action="./controllers/index/versus_selection.php" method="get">
+                <input type="hidden" name="remove_looser" value="<?= $attacker->getId() ?>"> 
+                <button class="customButton confirmAudio" type="submit">Next</button> 
+            </form>
+            <!-- <a href="./index.php"><button class="customButton">Next</button></a> -->
         </div>
 
         <div class="victoryD flex-column justify-content-center align-items-center">
@@ -97,7 +104,12 @@ endif;
             </div>
 
             <p class="levelUp">LEVEL UP !</p>
-            <button class="customButton next">Next</button>
+            <!-- <button class="customButton next">Next</button> -->
+            <form action="./controllers/index/versus_selection.php" method="get">
+                <input type="hidden" name="remove_looser" value="<?= $defender->getId() ?>"> 
+                <button class="customButton confirmAudio" type="submit">Next</button> 
+            </form>
+            <!-- <a href="./index.php"><button class="customButton">Next</button></a> -->
         </div>
     
 </section>
