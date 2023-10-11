@@ -23,9 +23,9 @@ if (!isset($_SESSION['attacker']) && !isset($_SESSION['defender']) && !isset($_S
     $_SESSION['defender'] = "";
     $_SESSION['creationError'] = 0;
 }
+// var_dump($_SESSION['attacker']);
+// var_dump($_SESSION['defender']);
 // session_destroy();
-
-
 // echo '<script>';
 // echo 'location.reload(true);'; // Recharge la page en ignorant le cache
 // echo 'localStorage.clear();';   // Vide le localStorage

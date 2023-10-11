@@ -43,11 +43,14 @@ if (!empty($_GET['remove_attackerId'])) {
 ////////// REMOVE DEAD HEROE FROM VERSUS PANEL AFTER BATTLE
 
 if (!empty($_GET['remove_looser'])) {
-    $heroRepository = new HeroRepository($db);
-    $heroData = $heroRepository->selectById($_GET['remove_looser']);
-
-    $_SESSION['attacker'] = $heroRepository->createById($heroData);
+    $_SESSION['attacker'] = "";
     $_SESSION['defender'] = "";
+
+    // $heroRepository = new HeroRepository($db);
+    // $heroData = $heroRepository->selectById($_GET['remove_looser']);
+
+    // $_SESSION['attacker'] = $heroRepository->createById($heroData);
+    
 }
 
 

@@ -22,100 +22,160 @@ $descriptionsArray = array(
 
 $warriorStats = array(
     array(
-        'maxHealth' => 100,
+        'maxHealth' => 115,
         'maxEnergy' => 10,
         'attack' => 9,
-        'defense' => 4,
+        'defense' => 5,
         'evasion' => 2,
         'critical' => 2,
         'speed' => 4,
         'regen' => 5
     ),
     array(
-        'maxHealth' => 120,
+        'maxHealth' => 130,
         'maxEnergy' => 10,
         'attack' => 11,
-        'defense' => 5,
-        'evasion' => 3,
+        'defense' => 6,
+        'evasion' => 2,
         'critical' => 2,
+        'speed' => 4,
+        'regen' => 6
+    ),
+    array(
+        'maxHealth' => 145,
+        'maxEnergy' => 10,
+        'attack' => 13,
+        'defense' => 7,
+        'evasion' => 2,
+        'critical' => 3,
         'speed' => 5,
         'regen' => 6
     ),
     array(
-        'maxHealth' => 130,
+        'maxHealth' => 160,
         'maxEnergy' => 10,
-        'attack' => 13,
-        'defense' => 6,
+        'attack' => 14,
+        'defense' => 8,
         'evasion' => 3,
         'critical' => 3,
         'speed' => 5,
+        'regen' => 7
+    ),
+    array(
+        'maxHealth' => 175,
+        'maxEnergy' => 10,
+        'attack' => 16,
+        'defense' => 9,
+        'evasion' => 3,
+        'critical' => 3,
+        'speed' => 6,
         'regen' => 7
     )
 );
 
 $archerStats = array(
     array(
+        'maxHealth' => 90,
+        'maxEnergy' => 10,
+        'attack' => 11,
+        'defense' => 3,
+        'evasion' => 3,
+        'critical' => 3,
+        'speed' => 5,
+        'regen' => 4
+    ),
+    array(
         'maxHealth' => 100,
         'maxEnergy' => 10,
-        'attack' => 9,
+        'attack' => 13,
+        'defense' => 3,
+        'evasion' => 4,
+        'critical' => 3,
+        'speed' => 6,
+        'regen' => 4
+    ),
+    array(
+        'maxHealth' => 110,
+        'maxEnergy' => 10,
+        'attack' => 15,
         'defense' => 4,
-        'evasion' => 2,
-        'critical' => 2,
-        'speed' => 4,
+        'evasion' => 4,
+        'critical' => 4,
+        'speed' => 6,
         'regen' => 5
     ),
     array(
         'maxHealth' => 120,
         'maxEnergy' => 10,
-        'attack' => 11,
-        'defense' => 5,
-        'evasion' => 3,
-        'critical' => 2,
-        'speed' => 5,
-        'regen' => 6
+        'attack' => 17,
+        'defense' => 4,
+        'evasion' => 5,
+        'critical' => 4,
+        'speed' => 7,
+        'regen' => 5
     ),
     array(
         'maxHealth' => 130,
         'maxEnergy' => 10,
-        'attack' => 13,
-        'defense' => 6,
-        'evasion' => 3,
-        'critical' => 3,
-        'speed' => 5,
-        'regen' => 7
+        'attack' => 19,
+        'defense' => 5,
+        'evasion' => 5,
+        'critical' => 4,
+        'speed' => 7,
+        'regen' => 6
     )
 );
 
 $wizardStats = array(
     array(
-        'maxHealth' => 100,
+        'maxHealth' => 90,
         'maxEnergy' => 10,
-        'attack' => 9,
+        'attack' => 12,
         'defense' => 4,
         'evasion' => 2,
         'critical' => 2,
-        'speed' => 4,
+        'speed' => 5,
+        'regen' => 4
+    ),
+    array(
+        'maxHealth' => 100,
+        'maxEnergy' => 10,
+        'attack' => 15,
+        'defense' => 4,
+        'evasion' => 2,
+        'critical' => 3,
+        'speed' => 6,
+        'regen' => 4
+    ),
+    array(
+        'maxHealth' => 110,
+        'maxEnergy' => 10,
+        'attack' => 17,
+        'defense' => 5,
+        'evasion' => 3,
+        'critical' => 3,
+        'speed' => 6,
         'regen' => 5
     ),
     array(
         'maxHealth' => 120,
         'maxEnergy' => 10,
-        'attack' => 11,
+        'attack' => 20,
         'defense' => 5,
         'evasion' => 3,
-        'critical' => 2,
-        'speed' => 5,
-        'regen' => 6
+        'critical' => 4,
+        'speed' => 6,
+        'regen' => 5
     ),
     array(
         'maxHealth' => 130,
         'maxEnergy' => 10,
-        'attack' => 13,
+        'attack' => 22,
         'defense' => 6,
-        'evasion' => 3,
-        'critical' => 3,
-        'speed' => 5,
-        'regen' => 7
+        'evasion' => 4,
+        'critical' => 4,
+        'speed' => 7,
+        'regen' => 6
     )
 );
 
@@ -123,65 +183,105 @@ $priestStats = array(
     array(
         'maxHealth' => 100,
         'maxEnergy' => 10,
-        'attack' => 9,
-        'defense' => 4,
+        'attack' => 8,
+        'defense' => 5,
         'evasion' => 2,
         'critical' => 2,
         'speed' => 4,
-        'regen' => 5
+        'regen' => 7
     ),
     array(
-        'maxHealth' => 120,
+        'maxHealth' => 115,
         'maxEnergy' => 10,
-        'attack' => 11,
+        'attack' => 9,
         'defense' => 5,
-        'evasion' => 3,
+        'evasion' => 2,
         'critical' => 2,
         'speed' => 5,
-        'regen' => 6
+        'regen' => 8
     ),
     array(
-        'maxHealth' => 130,
+        'maxHealth' => 125,
         'maxEnergy' => 10,
-        'attack' => 13,
+        'attack' => 11,
         'defense' => 6,
         'evasion' => 3,
         'critical' => 3,
         'speed' => 5,
-        'regen' => 7
+        'regen' => 9
+    ),
+    array(
+        'maxHealth' => 140,
+        'maxEnergy' => 10,
+        'attack' => 12,
+        'defense' => 6,
+        'evasion' => 3,
+        'critical' => 3,
+        'speed' => 5,
+        'regen' => 10
+    ),
+    array(
+        'maxHealth' => 150,
+        'maxEnergy' => 10,
+        'attack' => 14,
+        'defense' => 7,
+        'evasion' => 4,
+        'critical' => 3,
+        'speed' => 6,
+        'regen' => 11
     )
 );
 
 $monkStats = array(
     array(
-        'maxHealth' => 100,
+        'maxHealth' => 110,
         'maxEnergy' => 10,
-        'attack' => 9,
-        'defense' => 4,
-        'evasion' => 2,
+        'attack' => 10,
+        'defense' => 3,
+        'evasion' => 4,
         'critical' => 2,
-        'speed' => 4,
+        'speed' => 6,
         'regen' => 5
     ),
     array(
-        'maxHealth' => 120,
+        'maxHealth' => 125,
         'maxEnergy' => 10,
-        'attack' => 11,
-        'defense' => 5,
-        'evasion' => 3,
+        'attack' => 12,
+        'defense' => 3,
+        'evasion' => 5,
         'critical' => 2,
-        'speed' => 5,
+        'speed' => 6,
         'regen' => 6
     ),
     array(
-        'maxHealth' => 130,
+        'maxHealth' => 135,
         'maxEnergy' => 10,
         'attack' => 13,
-        'defense' => 6,
-        'evasion' => 3,
+        'defense' => 4,
+        'evasion' => 5,
         'critical' => 3,
-        'speed' => 5,
+        'speed' => 7,
         'regen' => 7
+    ),
+    array(
+        'maxHealth' => 150,
+        'maxEnergy' => 10,
+        'attack' => 15,
+        'defense' => 4,
+        'evasion' => 6,
+        'critical' => 3,
+        'speed' => 7,
+        'regen' => 7
+    ),
+    array(
+        'maxHealth' => 165,
+        'maxEnergy' => 10,
+        'attack' => 17,
+        'defense' => 4,
+        'evasion' => 6,
+        'critical' => 4,
+        'speed' => 8,
+        'regen' => 8
     )
 );
 
@@ -189,32 +289,52 @@ $duellistStats = array(
     array(
         'maxHealth' => 100,
         'maxEnergy' => 10,
-        'attack' => 9,
-        'defense' => 4,
+        'attack' => 10,
+        'defense' => 3,
         'evasion' => 2,
-        'critical' => 2,
-        'speed' => 4,
-        'regen' => 5
+        'critical' => 4,
+        'speed' => 6,
+        'regen' => 4
+    ),
+    array(
+        'maxHealth' => 110,
+        'maxEnergy' => 10,
+        'attack' => 12,
+        'defense' => 3,
+        'evasion' => 3,
+        'critical' => 5,
+        'speed' => 7,
+        'regen' => 4
     ),
     array(
         'maxHealth' => 120,
         'maxEnergy' => 10,
-        'attack' => 11,
-        'defense' => 5,
+        'attack' => 13,
+        'defense' => 4,
         'evasion' => 3,
-        'critical' => 2,
-        'speed' => 5,
-        'regen' => 6
+        'critical' => 6,
+        'speed' => 7,
+        'regen' => 5
     ),
     array(
         'maxHealth' => 130,
         'maxEnergy' => 10,
-        'attack' => 13,
-        'defense' => 6,
-        'evasion' => 3,
-        'critical' => 3,
-        'speed' => 5,
-        'regen' => 7
+        'attack' => 15,
+        'defense' => 4,
+        'evasion' => 4,
+        'critical' => 6,
+        'speed' => 8,
+        'regen' => 5
+    ),
+    array(
+        'maxHealth' => 140,
+        'maxEnergy' => 10,
+        'attack' => 16,
+        'defense' => 4,
+        'evasion' => 4,
+        'critical' => 7,
+        'speed' => 8,
+        'regen' => 6
     )
 );
 
@@ -223,30 +343,50 @@ $paladinStats = array(
         'maxHealth' => 100,
         'maxEnergy' => 10,
         'attack' => 9,
-        'defense' => 4,
+        'defense' => 6,
+        'evasion' => 1,
+        'critical' => 2,
+        'speed' => 3,
+        'regen' => 5
+    ),
+    array(
+        'maxHealth' => 110,
+        'maxEnergy' => 10,
+        'attack' => 10,
+        'defense' => 7,
         'evasion' => 2,
         'critical' => 2,
-        'speed' => 4,
-        'regen' => 5
+        'speed' => 3,
+        'regen' => 6
     ),
     array(
         'maxHealth' => 120,
         'maxEnergy' => 10,
-        'attack' => 11,
-        'defense' => 5,
-        'evasion' => 3,
+        'attack' => 12,
+        'defense' => 8,
+        'evasion' => 2,
         'critical' => 2,
-        'speed' => 5,
-        'regen' => 6
+        'speed' => 4,
+        'regen' => 7
     ),
     array(
         'maxHealth' => 130,
         'maxEnergy' => 10,
         'attack' => 13,
-        'defense' => 6,
-        'evasion' => 3,
+        'defense' => 9,
+        'evasion' => 2,
         'critical' => 3,
-        'speed' => 5,
-        'regen' => 7
+        'speed' => 4,
+        'regen' => 8
+    ),
+    array(
+        'maxHealth' => 140,
+        'maxEnergy' => 10,
+        'attack' => 15,
+        'defense' => 10,
+        'evasion' => 2,
+        'critical' => 3,
+        'speed' => 4,
+        'regen' => 9
     )
 );

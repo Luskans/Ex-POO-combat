@@ -229,15 +229,17 @@ async function fetchData() {
             energyIntA.innerHTML = attacker.energy;
         }
 
-        function updateExpBarA() {  
-            attacker.exp += defender.expGiven;
-            expPercentA = attacker.exp / attacker.maxExp * 100;
-            if (attacker.exp >= attacker.maxExp) {
-                let expPlus = attacker.exp - attacker.maxExp;
-                attacker.exp = expPlus;
-                attacker.level += 1;
-                expPercentA = attacker.exp / (attacker.maxExp + 100) * 100;
-                levelUp[0].style.display = 'block';
+        function updateExpBarA() {
+            if (attacker.level < 5) {
+                attacker.exp += defender.expGiven;
+                expPercentA = attacker.exp / attacker.maxExp * 100;
+                if (attacker.exp >= attacker.maxExp) {
+                    let expPlus = attacker.exp - attacker.maxExp;
+                    attacker.exp = expPlus;
+                    attacker.level += 1;
+                    expPercentA = attacker.exp / (attacker.maxExp + 100) * 100;
+                    levelUp[0].style.display = 'block';
+                }
             }
             expExtA.ariaValueNow = attacker.exp;
             expIntA.style.width = expPercentA + '%';
@@ -280,14 +282,16 @@ async function fetchData() {
         }
 
         function updateExpBarD() {
-            defender.exp += attacker.expGiven;
-            expPercentD = defender.exp / defender.maxExp * 100;
-            if (defender.exp >= defender.maxExp) {
-                let expPlus = defender.exp - defender.maxExp;
-                defender.exp = expPlus;
-                defender.level += 1;
-                expPercentD = defender.exp / (defender.maxExp + 100) * 100;
-                levelUp[1].style.display = 'block';
+            if (defender.level < 5) {
+                defender.exp += attacker.expGiven;
+                expPercentD = defender.exp / defender.maxExp * 100;
+                if (defender.exp >= defender.maxExp) {
+                    let expPlus = defender.exp - defender.maxExp;
+                    defender.exp = expPlus;
+                    defender.level += 1;
+                    expPercentD = defender.exp / (defender.maxExp + 100) * 100;
+                    levelUp[1].style.display = 'block';
+                }
             }
             expExtD.ariaValueNow = defender.exp;
             expIntD.style.width = expPercentD + '%';
@@ -355,32 +359,3 @@ async function fetchData() {
 }
 
 fetchData();
-
-// async function returnDatas() {
-//     // Crée un objet contenant les données mises à jour des héros
-//     const updatedData = {
-//         attacker: {
-//             health: 100,
-//             energy: 10,
-//             exp: 50,
-//             // Autres propriétés mises à jour si nécessaire
-//         },
-//         defender: {
-//             health: 60,
-//             energy: 3,
-//             exp: 90,
-//             // Autres propriétés mises à jour si nécessaire
-//         }
-//     };
-
-//     // Convertit l'objet en JSON
-//     const jsonDatas = JSON.stringify(updatedData);
-//     console.log(updatedData);
-//     console.log(jsonDatas);
-
-//     await fetch('./controllers/fight/fight_return.php', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: jsonDatas
-//     });
-// }
