@@ -53,24 +53,3 @@
         </div>
     </div>
 </div>
-
-<!------------------------------------>
-<!-- HERO CONFIRMATION DELETE MODAL -->
-<!------------------------------------>
-
-<div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body text-center">
-                <p>Do you really want to delete this character ?
-                <div class="d-flex justify-content-center gap-5">
-                    <button type="button" class="customButton cancelAudio" data-bs-dismiss="modal">Cancel</button>
-                    <form action="./controllers/index/hero_delete.php" method="post">
-                        <input type="hidden" name="delete_heroId" value="<?= $hero->getId() ?>"> 
-                        <button class="customButton confirmAudio" type="submit">Confirm</button>    
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

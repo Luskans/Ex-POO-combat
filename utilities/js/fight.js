@@ -85,7 +85,7 @@ async function fetchData() {
             damageTarget(target) {
                 let random = Math.floor(Math.random() * 10) + 1; // entre 1 et 10
                 if (this.energy == 10) {
-                    damageNumber = this.level * 10 + 10;
+                    damageNumber = this.level * 5 + 15;
                     popup.style.color = '#dc3545'; // rouge
                     popup.style.fontSize = '3.4rem';
                     this.energy = -2;
